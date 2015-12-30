@@ -148,9 +148,9 @@ section {
     -ms-flex-align: center;
     align-items: center;
 
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
 
 .icon {
@@ -166,18 +166,18 @@ section {
     display: -ms-flexbox;
     display: flex;
 
-    -webkit-flex-wrap: wrap;
+    /*-webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    flex-wrap: wrap;*/
 
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
 
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
 .icon_content {
@@ -200,26 +200,33 @@ section {
     -ms-flex-align: center;
     align-items: center;
 
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
 
 .icon_image {
     display: inline-block;
 }
 .icon {
-    background-color: lightblue;
+    /*background-color: lightblue;*/
+    margin-left: 1.5em;
+    margin-right: 1.5em;
 }
 
 .icon {
-    height: 9em;
+    /*height: 7em;*/
     padding: 0.5em;
 }
 
+.icon {
+    background-color: lightblue;
+    padding: 1em;
+}
+
 .icon > * {
-    margin-left: 0.25em;
-    margin-right: 0.25em;
+    /*margin-left: 0.4em;
+    margin-right: 0.4em;*/
 }
 .icon :first-child {
     margin-left: 0;
@@ -229,16 +236,15 @@ section {
 }
 
 .badge {
-    /*height: 4em;*/
-    /*height: 100%;*/
     /*width: 100%;*/
-    /*width: 12em;*/
-    width: 100%;
+    /*height: 4em;*/
+    width: 10em;
+    margin-top: 1em;
 }
 
 .icon_image {
-    /*height: 8em;*/
-    height: 100%;
+    height: 10em;
+    /*height: 100%;*/
 }
 
 .icon_content a {
@@ -248,8 +254,8 @@ section {
 }
 
 .icon_content {
-    width: 12em;
-    height: 100%;
+    /*width: 12em;*/
+    /*height: 100%;*/
 }
 .icon_content h2 {
     font-size: 1.5em;
