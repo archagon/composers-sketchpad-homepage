@@ -21,63 +21,124 @@
     <article>
         <section id="title">
             <h1>Composer's Sketchpad</h1>
-            <p>Fingerpaint your music!</p>
-            <div>
-                <p><img src="Icon.png" /></p>
-            </div>
-            <div>
-                <a href="http://itunes.apple.com/us/app/APPNAME/id978563657">
-                    <img class="badge" style="width:12em" src="download_badge.svg" />
-                </a>
+            <p><img id="main_icon" src="Icon.png" /></p>
+        </section>
+
+        <section id="blurb">
+            <p>It's hard to experiment with music if you're not a virtuoso. A lot of remembering is involved. Pick out a nice melody? Now you have to keep it in mind going forward. Find a nice harmonic progression? Make sure you don't let it slip. And what about putting everything together?</p>
+
+            <p>Composer's Sketchpad makes composing music quick and intuitive.</p>
+        </section>
+
+        <section id="demo">
+            <div class="demo_container">
+                <img src="ipad.png" />
+                <video></vide>
             </div>
         </section>
 
-        <!-- <section id="features">
-            <div id="feature_blurbs" class="app">
-                <div>
-                    <img src="Samples/normal1.jpg" width="250px" />
+        <section>
+            <div id="icons_list" />
+
+                <div class="icon">
+                    <img class="icon_image" src="Icon.png" />
+                    <span class="icon_content">
+                        <h2>Composer's Sketchpad</h2>
+                        <a href="http://itunes.apple.com/us/app/APPNAME/id978563657">
+                            <img class="badge" src="download_badge.svg" />
+                        </a>
+                    </span>
                 </div>
 
-                <div>
-                    <img src="Samples/tall.jpg" width="150px" />
+                <div class="icon">
+                    <img class="icon_image" src="Icon.png" />
+                    <span class="icon_content">
+                        <h2>Composer's Sketchpad Lite</h2>
+                        <a href="http://itunes.apple.com/us/app/APPNAME/id978563657">
+                            <img class="badge" src="download_badge.svg" />
+                        </a>
+                    </span>
                 </div>
 
-                <div>
-                    <img src="Samples/normal2.jpg" width="300px" />
+            </div>
+        </section>
+
+        <section id="features">
+            <h1>Features</h1>
+            <div id="features_list">
+                <div class="feature">
+                    <div class="divider"></div>
+                    <div class="content">
+                        <h2>Flexible Notes</h2>
+                        <img src="Squiggle.png" />
+                        <p>Don't feel constrained by antiquated notions of time and pitch: start your notes at any point and bend them to any pitch! Notate guitar solos and complex polyrhythms as easily as any choral.</p>
+                    </div>
                 </div>
 
-                <div>
-                    <img src="Samples/long.jpg" width="300px" />
+                <div class="feature">
+                    <div class="divider"></div>
+                    <div class="content">
+                        <h2>Intuitive Drawing</h2>
+                        <img src="ZoomDraw.png" />
+                        <p>Making music with Composer's Sketchpad is easy. Scroll around with your finger. Draw by using a second finger to the right of the first. Zoom by using second finger to the left of the first. Play back your music immediately. Rewind. Record.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="divider"></div>
+                    <div class="content">
+                        <h2>Pencil Support</h2>
+                        <img src="Squiggle.png" />
+                        <p>If you're a lucky owner of an iPad Pro, the Pencil is fully supported! Draw smooth, lugubrious notes with the swype of the sexy stylus.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="divider"></div>
+                    <div class="content">
+                        <h2>Over 100 Instruments</h2>
+                        <img src="Squiggle.png" />
+                        <p>Choose from a variety of instruments across many different genres, including keyboards, guitars, orchestral instruments, and many more. You can also use more than 50 different percussion notes.
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="divider"></div>
+                    <div class="content">
+                        <h2>Other Things As Well</h2>
+                        <img src="Squiggle.png" />
+                        <p>Blah blah blah blah blah.</p>
+                    </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
-        <!-- <div class="screenshot"><img src="Screenshot.png" width="797px" /></div> -->
+        <section id="faq">
+            <h1>Questions</h1>
+            <ul>
+                <li class="question">
+                    <h2>What's with the weird controls?</h2>
+                    <p>Most drawing apps let you draw with one finger and pan around with two. Personally, I've never had this work well; you often have to try multiple times to get it to work, and you can forget about momentum scrolling. For this app, I wanted scrolling to be seamless without compromising on drawing. The mental model is actually quite simple: you have to hold down the canvas with one finger before you start drawing.</p>
+                </li>
 
-       <!--  <section id="features">
-            <div id="feature_blurbs" class="app">
-                <div>
-                    <img src="Samples/normal1 (1).jpg" width="300px" />
-                </div>
+                <li class="question">
+                    <h2>Why no MIDI in/out support?</h2>
+                    <p>One of the starring features of Composer's Sketchpad is the ability for any note to start at, and bend to, any pitch. Unfortunately, MIDI pitch bends are done per-channel, which means that the MIDI output for this app will be very complicated and ill-suited to most apps. If you know of a standard way to pitch-bend individual MIDI notes, I'd love to hear about it!</p>
+                </li>
 
-                <div>
-                    <img src="Samples/tall (1).jpg" width="300px" />
-                </div>
-
-                <div>
-                    <img src="Samples/normal2 (1).jpg" width="300px" />
-                </div>
-
-                <div>
-                    <img src="Samples/long (1).jpg" width="300px" />
-                </div>
-            </div>
-        </section> -->
+                <li class="question">
+                    <h2>What features are in the pipeline?</h2>
+                    <p>In terms of major features, MP3 export and iPhone support are the highest priority. I'll also be looking into Audiobus support. Of course, there are tons of smaller and more esoteric features that I'll be adding, too! (But I don't want to spill all the beans quite yet<a href="http://www.huygens-fokker.org/scala/">.</a>)</p>
+                </li>
+            </ul>
+        </section>
 
         <hr>
 
         <section id="links">
             <p><strong>If you have any questions or bugs to report, please e-mail me at <a href="mailto:backgroundifier@archagon.net">backgroundifier@archagon.net</a>.</strong></p>
+
+            <p>I'm a huge proponent of open source software, and I'd love to release the code for this project as soon as possible. For competitive reasons, I intend to do this either after I hit my sales benchmark, or after a long enough period of time has passed. I realize this sounds pretty wishy-washy right now, but I want to at least put this out there as a sort of pledge. Stay posted!</p>
         </section>
     </article>
 
