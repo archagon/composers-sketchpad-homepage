@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+* {
+    -webkit-text-size-adjust: none;
+}
+
 /* global box sizing */
 html {
   box-sizing: border-box;
@@ -22,26 +26,6 @@ html {
     }
 }
 
-/*////////
-// BODY //
-////////*/
-
-body {
-    margin: 0 auto 0 auto;
-}
-
-body {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-}
-
-body {
-    background-color: #C6EAFF;
-}
-
-/*h1, h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-}*/
-
 h1 {
     text-align: center;
     font-size: 3em;
@@ -49,25 +33,28 @@ h1 {
 
 p {
     font-size: 1.15em;
-    -webkit-text-size-adjust: none;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
 }
 
-/*///////////
-// ARTICLE //
-///////////*/
-
-article {
-    padding-top: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
+img {
+    max-width: 100%;
 }
 
-hr {
-    /*margin: 2em 0 2em 0;*/
+/*/////////
+// FONTS //
+/////////*/
+
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
-section > h1 {
-    margin: 0;
+/*////////
+// BODY //
+////////*/
+
+body {
+    background-color: #C6EAFF;
 }
 
 section {
@@ -75,59 +62,21 @@ section {
     width: 100%;
 }
 
-#title {
-    background-color: #4EB4E8;
-}
-
-#blurb {
-    background-color: orange;
-}
-
-#features_list {
-    background-color: yellow;
-}
-
-#faq {
-    background-color: green;
-}
-
-#links {
-    background-color: blue;
-}
-
 /*/////////
 // TITLE //
 /////////*/
 
-#main_icon {
-    width: 8em;
-}
-
-#title {
-    text-align: center;
-    /*max-width: 44em;*/
-    padding-left: 2em;
-    padding-right: 2em;
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    /*margin-bottom: 3em;*/
-}
-
 #title h1 {
-    font-size: 3.5em;
-    font-family: Calibri, Lucida Grande, Optima, Arial, sans-serif;
+    font-size: 4em;
+    /*font-family: Calibri, Lucida Grande, Optima, Arial, sans-serif;*/
+    /*color: #293CC3;*/
     font-weight: bold;
-    color: #293CC3;
-}
-
-#title p {
-    font-size: 1.5em;
-    font-family: Calibri, Lucida Grande, Optima, Arial, sans-serif;
 }
 
 #icons_list {
     padding: 1em;
 }
+
 #icons_list {
     display: -webkit-box;
     display: -webkit-flex;
@@ -154,9 +103,6 @@ section {
 }
 
 .icon {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    /*width: 28em;*/
     border-radius: 1em;
 }
 
@@ -165,10 +111,6 @@ section {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-
-    /*-webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;*/
 
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -186,15 +128,6 @@ section {
     display: -ms-flexbox;
     display: flex;
 
-    /*-webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;*/
-
-    -webkit-box-pack: space-between;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: space-between;
-    justify-content: space-between;
-
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -205,23 +138,18 @@ section {
     flex-direction: column;
 }
 
-.icon_image {
-    display: inline-block;
-}
+/*spacing between normal/lite icon boxes*/
 .icon {
-    /*background-color: lightblue;*/
     margin-left: 1.5em;
     margin-right: 1.5em;
 }
 
 .icon {
-    /*height: 7em;*/
-    padding: 0.5em;
+    padding: 1em;
 }
 
 .icon {
     background-color: lightblue;
-    padding: 1em;
 }
 
 .icon > * {
@@ -237,109 +165,60 @@ section {
 
 .badge {
     width: 100%;
-    /*height: 4em;*/
     width: 10em;
-    /*height: 100%;*/
 }
 
 .icon_image {
     height: 10em;
-    /*height: 100%;*/
 }
 
-.icon_content h2 {
-    font-size: 1.5em;
-    text-align: center;
-    color: blue;
-}
+/*/////////
+// BLURB //
+/////////*/
 
-/*////////////////////////////////////
-// SHOWCASE ICON LINK SECTION SETUP //
-////////////////////////////////////*/
-
-.app {
-    text-align: center;
-}
-
-.app h1 {
-    font-size: 1.45em;
-    font-weight: 500;
-    margin: 0.7em 0 0.3em 0;
-}
-
-.app p {
-    font-weight: 100;
-    font-size: 1em;
-    margin: 0.3em 0 0.3em 0;
-}
-
-.app a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.app > * {
-    /*border: lightblue 0.4em solid;*/
-    padding: 1em;
-    position: relative;
-}
-
-/* badge positioning from the bottom */
-.app .description {
-    margin-bottom: 3.5em;
-}
-.app .badge {
-    position: absolute;
-    bottom: 1em;
+#blurb {
+    max-width: 50em;
     margin-left: auto;
     margin-right: auto;
-    left: 0;
-    right: 0;
 }
 
-.premium {
-    margin-bottom: 1em;
+#blurb p {
+    font-size: 1.25em;
+    text-align: center;
 }
 
-/* right side images are centered and on separate lines */
-.app img {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+#blurb :first-child {
+    margin-top: 0;
+}
+#blurb :last-child {
+    margin-bottom: 0;
 }
 
 /*////////
 // DEMO //
 ////////*/
 
-#demo {
-    background-color: red;
-}
-
 #demo .demo_container {
     position: relative;
-    /*background-color: blue;*/
     width: 60em;
     max-width: 85%;
-    /*height: 35em;*/
     margin-left: auto;
     margin-right: auto;
-    /*background: url(ipad.png) no-repeat center center;*/
-    /*background-size: 100%;*/
 }
 
 #demo .demo_container video {
     position: absolute;
     width: 81.5%;
-    height: 85.5%;
-    top: -0.2em;
+    /*height: 85.5%;*/
+    top: -0.15em;
     bottom: 0;
-    left: 0;
+    left: 0.05em;
     right: 0;
     margin: auto;
-    /*background-color: blue;*/
+}
 
-    background: url(placeholder.PNG) no-repeat center center;
+#demo .demo_container video {
+    background: url(placeholder.png) no-repeat center center;
     background-size: 100% 100%;
 }
 
@@ -370,10 +249,6 @@ section {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
 
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -410,22 +285,10 @@ section {
     -ms-flex-direction: row;
     flex-direction: row;
 }
+
 .content > * {
     margin-right: 1em;
     margin-left: 1em;
-}
-
-/*.feature:first-child {
-    margin-top: 1em;
-}
-
-
-.feature {
-    background-color: pink;
-    /*margin-top: 0.5em;
-    margin-bottom: 0.5em;*/
-    /*width: 40em;*/
-    /*font-size: 150%;*/
 }
 
 .feature {
@@ -441,14 +304,7 @@ section {
     padding-bottom: 1em;
 }
 
-/*@media screen and (max-width: 720px) {
-    #features_list {
-    }
-}*/
-
 #features_list > * {
-    /*margin: 2em 0 2em 0;*/
-    /*width: 20em;*/
     width: 100%;
     text-align: center;
 }
@@ -456,10 +312,6 @@ section {
 .feature {
     padding-left: 0;
     padding-right: 0;
-    background-color: #39B54A;
-}
-.feature h2 {
-    width: 100%;
 }
 
 .feature .content {
@@ -485,7 +337,6 @@ section {
 }
 
 /*Title color: 50% / 65%*/
-
 .feature .feature_icon {
     background-color: rgba(256, 256, 256, 0.6);
 }
@@ -548,9 +399,6 @@ section {
 .feature:nth-child(4) h2 {
     color: #414A95;
 }
-/*.feature:nth-child(4) .feature_icon {
-    background-color: #E4E9F7;
-}*/
 .feature:nth-child(5) .divider {
     background: url("data:image/svg+xml;utf8,\
         <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='150px' height='50px' viewBox='0 0 150 50' enable-background='new 0 0 150 50' xml:space='preserve' preserveAspectRatio='none'>\
@@ -565,9 +413,6 @@ section {
 .feature:nth-child(5) h2 {
     color: #947B42;
 }
-/*.feature:nth-child(5) .feature_icon {
-    background-color: #FBF2DD;
-}*/
 .feature:nth-child(6) .divider {
     background: url("data:image/svg+xml;utf8,\
         <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='150px' height='50px' viewBox='0 0 150 50' enable-background='new 0 0 150 50' xml:space='preserve' preserveAspectRatio='none'>\
@@ -602,6 +447,10 @@ section {
     max-width: 70em;
 }
 
+#faq h1 {
+    margin-bottom: 0.5em;
+}
+
 /*/////////
 // LINKS //
 /////////*/
@@ -623,7 +472,6 @@ section {
 //////////*/
 
 footer {
-    /*margin-top: 3em;*/
     text-align: center;
     font-size: 85%;
     color: gray;
@@ -634,25 +482,14 @@ footer {
 // OTHER //
 /////////*/
 
-.screenshot {
-    text-align: center;
-}
-
-img {
-    max-width: 100%;
-}
-
-
-
 .icon {
     position: relative;
 }
+
 .coming_soon {
     position: absolute;
     left: 0;
-    /*top: -0.5em;*/
     top: 15.75em;
-    /*border-radius: 1em;*/
     padding: 0.5em;
 }
 .coming_soon {
@@ -660,6 +497,9 @@ img {
     font-size: 0.7em;
     background-color: rgba(0, 128, 0, 1);
     color: white;
-    /*height: 100%;*/
     width: 100%;
+}
+.coming_soon p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
