@@ -73,6 +73,11 @@ section {
     font-weight: bold;
 }
 
+#title div {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
 #icons_list {
     padding: 1em;
 }
@@ -169,8 +174,7 @@ section {
 }
 
 .icon_image {
-    width: 10em !important;
-    height: 10em !important;
+    width: 10em;
 }
 
 /*/////////
@@ -181,8 +185,12 @@ section {
     max-width: 50em;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1em;
-    /*TODO: margin*/
+    padding-top: 0;
+}
+
+#blurb div {
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 #blurb p {
@@ -240,8 +248,11 @@ section {
 
 .feature_icon {
     border-radius: 1em;
-    width: 9em !important;
-    height: 9em !important;
+    width: 9em;
+
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
 }
 
 #features_list {
@@ -327,7 +338,7 @@ section {
 }
 
 .feature_box {
-    width: 30em;
+    max-width: 30em;
 }
 
 .feature_box h2 {
