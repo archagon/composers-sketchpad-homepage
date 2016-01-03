@@ -499,14 +499,22 @@ footer {
 // OTHER //
 /////////*/
 
-.icon {
+.non_active {
+   pointer-events: none;
+   cursor: default;
+}
+
+.icon_content {
     position: relative;
 }
 
 .coming_soon {
     position: absolute;
-    left: 0;
-    top: 15.75em;
+    width: 115%;
+    left: calc(-57.5% + 50%);
+    /*left: 0;*/
+    right: 0;
+    top: -1.25em;
     padding: 0.5em;
 }
 .coming_soon {
@@ -514,7 +522,7 @@ footer {
     font-size: 0.7em;
     background-color: rgba(0, 128, 0, 1);
     color: white;
-    width: 100%;
+    /*width: 100%;*/
 }
 .coming_soon p {
     margin-top: 0;
