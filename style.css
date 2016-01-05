@@ -299,8 +299,8 @@ section {
 #demo .demo_container video {
     position: absolute;
     width: 81.5%;
-    height: 85.8%;
-    top: -0.13em;
+    height: 85.5%;
+    top: -0.27em;
     bottom: 0;
     left: 0.05em;
     right: 0;
@@ -555,11 +555,17 @@ section {
 }
 
 #links > div {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding: 0.5em;
     margin-left: auto;
     margin-right: auto;
     max-width: 70em;
+}
+
+#links > div :first-child {
+    margin-top: 0;
+}
+#links > div :last-child {
+    margin-bottom: 0;
 }
 
 #links a {
