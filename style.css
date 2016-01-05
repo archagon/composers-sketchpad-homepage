@@ -598,19 +598,21 @@ footer {
     /*left: 0;*/
     right: 0;
     top: -0.5em;
-    padding: 0.5em;
+    pading-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 .coming_soon h2 {
-    font-size: 2em;
+    font-size: 1.4em;
 }
 .coming_soon {
     text-align: center;
-    font-size: 0.5em;
+    font-size: 0.65em;
     background-color: #4DA05F;
     color: white;
     /*width: 100%;*/
 }
 .coming_soon p {
+    font-family: 'Avenir Next Condensed', 'Avenir Next', 'Helvetica', 'Arial', sans-serif;
     margin-top: 0;
     margin-bottom: 0;
 }
