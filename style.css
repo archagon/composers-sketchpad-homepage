@@ -76,7 +76,7 @@ section {
     max-width: 50em;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 0.25em;
+    padding-bottom: 0.5em;
 }
 #blurb {
     background-color: #C6EAFF;
@@ -137,6 +137,9 @@ section {
     /*font-family: Calibri, Lucida Grande, Optima, Arial, sans-serif;*/
     /*color: #293CC3;*/
     font-weight: bold;
+    line-height: 100%;
+    padding-top: 0.175em;
+    padding-bottom: 0.175em;
 }
 
 #title div {
@@ -211,8 +214,8 @@ section {
 
 /*spacing between normal/lite icon boxes*/
 .icon {
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .icon {
@@ -256,6 +259,7 @@ section {
     margin-left: auto;
     margin-right: auto;
     padding-top: 0;
+    padding-bottom: 0;
 }
 
 #blurb div {
@@ -329,12 +333,12 @@ section {
 }
 
 #awards > div {
-    padding: 1em;
+    padding: 0.75em;
     margin-left: auto;
     margin-right: auto;
-    max-width: 40em;
+    max-width: 38em;
     background-color: #FAFBD2;
-    border-radius: 3em;
+    border-radius: 2em;
 }
 
 .award {
@@ -359,24 +363,26 @@ section {
 }
 
 .award > img {
-    width: 8em;
-    min-width: 8em;
+    width: 6em;
+    min-width: 6em;
 }
 
 .award > p {
-    font-size: 1.2em;
+    font-size: 1em;
     /*font-weight: 500;*/
     color: black;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .award > * {
     margin-left: 0.5em;
     margin-right: 0.5em;
 }
-award :first-child {
+.award :first-child {
     margin-left: 0;
 }
-award :last-child {
+.award :last-child {
     margin-right: 0;
 }
 
