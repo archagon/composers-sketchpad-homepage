@@ -25,6 +25,7 @@
         ga('create', 'UA-44612590-3', 'auto');
         ga('send', 'pageview');
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -210,6 +211,13 @@
     <footer>
         <p>Copyright © Alexei Baboulevitch ("Archagon") 2016.
     </footer>
+
+    <script>
+        // iPad w/iOS9 seems to not display play button without this code
+        if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!= null)) {
+            $('#preview_video').prop("controls",true);
+        }
+    </script>
 </body>
 
 </html>
