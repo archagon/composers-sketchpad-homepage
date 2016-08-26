@@ -1,6 +1,7 @@
 // null = omit
 @mixin flexbox($direction, $align, $justify) {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
 
@@ -12,6 +13,7 @@
         }
 
         -webkit-box-pack: $alt-justify;
+        -webkit-justify-content: $justify;
         -ms-flex-pack: $alt-justify;
         justify-content: $justify;
     }
@@ -24,6 +26,7 @@
         }
 
         -webkit-box-align: $alt-align;
+        -webkit-align-items: $align;
         -ms-flex-align: $alt-align;
         -ms-grid-row-align: $align;
         align-items: $align;
@@ -44,9 +47,22 @@
 
         -webkit-box-orient: $alt-direction-1;
         -webkit-box-direction: $alt-direction-2;
+        -webkit-flex-direction: $direction;
         -ms-flex-direction: $direction;
         flex-direction: $direction;
     }
+}
+
+// TODO: figure out why this works
+// AB: only fixes things if display: box, which is probably not really relevant anymore
+@mixin flex-ios8-fix {
+    // > * {
+    //     -ms-flex-negative: 1;
+    //     flex-shrink: 1;
+    //     -webkit-box-flex: 1;
+    //     -ms-flex-positive: 1;
+    //     flex-grow: 1;
+    // }
 }
 
 @mixin no-flex-shrink {
@@ -302,6 +318,7 @@ $link-margin-compact: ($link-gap-compact - $link-padding-compact * 2) / 2;
 
     height: 3rem;
 
+    /* left icon and links */
     @include flexbox(null, center, space-between);
 
     padding-right: #{ $link-gap };
@@ -558,9 +575,11 @@ $link-margin-compact: ($link-gap-compact - $link-padding-compact * 2) / 2;
         padding-left: 1rem;
         padding-right: 1rem;
 
+        /* top-level icon boxes */
         @include flexbox(row, center, center);
 
         .icon {
+            /* icon and app store badge */
             @include flexbox(column, center, null);
 
             padding: 0.75em;
@@ -574,6 +593,7 @@ $link-margin-compact: ($link-gap-compact - $link-padding-compact * 2) / 2;
         }
 
         .icon_content {
+            /* not used anymore */
             @include flexbox(column, center, nil);
         }
 
@@ -728,7 +748,9 @@ $link-margin-compact: ($link-gap-compact - $link-padding-compact * 2) / 2;
         max-width: 64em;
         margin: auto;
 
+        /* overall features */
         @include flexbox(column, center, center);
+        @include flex-ios8-fix; //TODO: remove?
 
         > * {
             /* each feature spans the full width of the features box */
@@ -762,12 +784,14 @@ $link-margin-compact: ($link-gap-compact - $link-padding-compact * 2) / 2;
             padding-bottom: 2em;
         }
 
+        /* feature row */
         @include noncompact {
             @include flexbox(row, center, center);
         }
         @include compact {
             @include flexbox(column, center, center);
         }
+        @include flex-ios8-fix;
     }
 
     .feature_box {
@@ -780,6 +804,7 @@ $link-margin-compact: ($link-gap-compact - $link-padding-compact * 2) / 2;
     }
 
     .feature_icon {
+        // TODO: why no flex shrink here?
         width: 23em;
         @include compact {
             width: 34em;
@@ -874,7 +899,9 @@ $link-margin-compact: ($link-gap-compact - $link-padding-compact * 2) / 2;
     }
     > .descriptions_list {
         @include flexbox(null, flex-start, center);
+        @include flex-ios8-fix;
 
+        -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
@@ -1047,6 +1074,7 @@ preserveAspectRatio='none'>\
                 @include noncompact {
                     -webkit-box-orient: horizontal;
                     -webkit-box-direction: reverse;
+                    -webkit-flex-direction: row-reverse;
                     -ms-flex-direction: row-reverse;
                     flex-direction: row-reverse;
 
@@ -1141,6 +1169,7 @@ preserveAspectRatio='none'>\
 
     .award {
         @include flexbox(row, center, center);
+        @include flex-ios8-fix;
 
         margin-left: auto;
         margin-right: auto;
@@ -1204,8 +1233,8 @@ preserveAspectRatio='none'>\
         margin-left: auto;
         margin-right: auto;
 
-        /* center vertically */
         @include flexbox(null, center, null);
+        @include flex-ios8-fix;
 
         > img {
             @include no-flex-shrink;
