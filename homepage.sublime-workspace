@@ -3,6 +3,18 @@
 	{
 		"selected_items":
 		[
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"content",
+				"webkit-justify-content"
+			]
 		]
 	},
 	"buffers":
@@ -11,8 +23,83 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2598,
+				"buffer_size": 11789,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/*//////////\n// GLOBAL //\n//////////*/\n\n* {\n    margin: 0;\n    padding: 0;\n}\n\n* {\n    -webkit-text-size-adjust: none;\n}\n\n/* global box sizing */\nhtml {\n  box-sizing: border-box;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n}\n\n/* shrink fonts past estimated mobile threshhold */\n@media screen and (max-width: 720px) {\n    html {\n        font-size: 10px;\n    }\n}\n\nh1 {\n    text-align: center;\n    font-size: 3em;\n}\n\np {\n    font-size: 1.15em;\n    margin-top: 1.25em;\n    margin-bottom: 1.25em;\n}\n\nimg {\n    max-width: 100%;\n}\n\n/*////////\n// BODY //\n////////*/\n\nbody {\n    font-family: 'Avenir Next', 'Helvetica', 'Arial', sans-serif;\n}\n\nbody {\n    background-color: #C6EAFF;\n    color: #444;\n}\n\nsection {\n    padding: 1em 1em 1em 1em;\n    width: 100%;\n}\n\n/*/////////\n// TITLE //\n/////////*/\n\n\n/*TODO: integrate*/\n\n#title {\n    /*background-color: ;*/\n    font-family: 'Avenir Next', 'Helvetica', 'Arial', sans-serif;\n    font-weight: bold;\n    /*color: #5CB4E8;*/\n    /*color: #fff;*/\n    color: #3873B9;\n    max-width: 50em;\n    margin-left: auto;\n    margin-right: auto;\n    padding-bottom: 0.5em;\n}\n#blurb {\n    background-color: #C6EAFF;\n    /*color: #5CB4E8;*/\n    max-width: 50em;\n    margin-left: auto;\n    margin-right: auto;\n}\n#icons {\n    /*max-width: 70em;*/\n    margin-left: auto;\n    margin-right: auto;\n    /*border-radius: 3em;*/\n}\n.icons_list {\n\n}\n.icon {\n    background-color: #A0D0F7 !important;\n}\n.demo_container {\n    margin-left: auto;\n    margin-right: auto;\n    max-width: 55em !important;\n    width: 100% !important;\n}\n#features {\n    /*background-color: #7FC8FF;*/\n    padding-left: 1em !important;\n    padding-right: 1em !important;\n    margin-bottom: 1em;\n}\n#features > div {\n    color: white;\n    max-width: 60em;\n    border-radius: 3em;\n    overflow: hidden;\n    margin-left: auto;\n    margin-right: auto;\n}\n#faq ul {\n    list-style-type: none;\n}\n#faq p {\n    margin-top: 0.25em;\n    padding-bottom: 0.5em;\n    /*padding-left: 0.75em;*/\n}\n#links {\n    background-color: beige;\n}\n\n\n\n\n#title h1 {\n    font-size: 4em;\n    /*font-family: Calibri, Lucida Grande, Optima, Arial, sans-serif;*/\n    /*color: #293CC3;*/\n    font-weight: bold;\n    line-height: 100%;\n    padding-top: 0.175em;\n    padding-bottom: 0.175em;\n}\n\n#title div {\n    margin-left: 1em;\n    margin-right: 1em;\n}\n\n#icons_list {\n    padding: 1em;\n}\n\n#icons_list {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n\n    /*-webkit-flex-wrap: wrap;\n    -ms-flex-wrap: wrap;\n    flex-wrap: wrap;*/\n\n    -webkit-box-pack: center;\n    -webkit-justify-content: center;\n    -ms-flex-pack: center;\n    justify-content: center;\n\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n\n    -webkit-flex-direction: row;\n    -ms-flex-direction: row;\n    flex-direction: row;\n}\n\n.icon {\n    border-radius: 1em;\n}\n\n.icon {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n\n    -webkit-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n}\n\n.icon_content {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n\n    -webkit-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n}\n\n/*spacing between normal/lite icon boxes*/\n.icon {\n    margin-left: 1em;\n    margin-right: 1em;\n}\n\n.icon {\n    background-color: lightblue;\n}\n\n/*prevents whitespace below images*/\n.icon img {\n    display: block;\n}\n\n.icon {\n    padding: 0.75em;\n}\n\n.icon > * {\n    margin-top: 0.375em;\n    margin-bottom: 0.375em;\n}\n.icon :first-child {\n    margin-top: 0;\n}\n.icon :last-child {\n    margin-bottom: 0;\n}\n\n.badge {\n    width: 100%;\n    width: 10em;\n}\n\n.icon_image {\n    width: 10em;\n}\n\n/*/////////\n// BLURB //\n/////////*/\n\n#blurb {\n    margin-left: auto;\n    margin-right: auto;\n    padding-top: 0;\n    padding-bottom: 0;\n}\n\n#blurb div {\n    max-width: 45em;\n    margin-left: auto;\n    margin-right: auto;\n    padding-left: 1em;\n    padding-right: 1em;\n}\n\n#blurb p {\n    font-size: 1.75em;\n    text-align: center;\n}\n\n#blurb :first-child {\n    margin-top: 0;\n}\n#blurb :last-child {\n    margin-bottom: 0;\n}\n\n/*////////\n// DEMO //\n////////*/\n\n#demo {\n    /*background-color: #7FC8FF;*/\n    padding-left: 1em;\n    padding-right: 1em;\n    margin-bottom: 1em;\n}\n\n#demo {\n    padding-top: 0;\n    padding-bottom: 0;\n}\n\n#demo .demo_container {\n    position: relative;\n    width: 70em;\n    max-width: 85%;\n    margin-left: auto;\n    margin-right: auto;\n}\n\n#demo .demo_container video {\n    position: absolute;\n    width: 81.5%;\n    height: 85.5%;\n    top: -0.27em;\n    bottom: 0;\n    left: 0.05em;\n    right: 0;\n    margin: auto;\n}\n\n#demo .demo_container video {\n    background: url(placeholder.png) no-repeat center center;\n    background-size: 100% 100%;\n}\n\n/*//////////\n// AWARDS //\n//////////*/\n\n#awards {\n    padding-top: 0;\n    padding-bottom: 0;\n    margin-bottom: 1.5em;\n}\n\n#awards > div {\n    padding: 0.75em;\n    margin-left: auto;\n    margin-right: auto;\n    max-width: 38em;\n    background-color: #FAFBD2;\n    border-radius: 2em;\n}\n\n.award {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n\n    -webkit-box-pack: center;\n    -webkit-justify-content: center;\n    -ms-flex-pack: center;\n    justify-content: center;\n\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n\n    -webkit-flex-direction: row;\n    -ms-flex-direction: row;\n    flex-direction: row;\n}\n\n.award > img {\n    width: 6em;\n    min-width: 6em;\n}\n\n.award > p {\n    font-size: 1em;\n    /*font-weight: 500;*/\n    color: black;\n    margin-top: 0;\n    margin-bottom: 0;\n}\n\n.award > * {\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n}\n.award :first-child {\n    margin-left: 0;\n}\n.award :last-child {\n    margin-right: 0;\n}\n\n/*////////////\n// FEATURES //\n////////////*/\n\n#features {\n    padding: 0;\n}\n\n#features h1 {\n    padding: 0.5em;\n    background-color: #BBACFF;\n}\n\n.feature_icon {\n    border-radius: 1em;\n    width: 9em;\n\n    -webkit-flex-shrink: 0;\n    -ms-flex-negative: 0;\n    flex-shrink: 0;\n}\n\n#features_list {\n    padding: 0;\n}\n\n#features_list {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n\n    -webkit-box-pack: center;\n    -webkit-justify-content: center;\n    -ms-flex-pack: center;\n    justify-content: center;\n\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n\n    -webkit-flex-direction: column;\n    -ms-flex-direction: column;\n    flex-direction: column;\n}\n\n.content {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    display: flex;\n\n    -webkit-box-pack: center;\n    -webkit-justify-content: center;\n    -ms-flex-pack: center;\n    justify-content: center;\n\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n\n    -webkit-flex-direction: row;\n    -ms-flex-direction: row;\n    flex-direction: row;\n}\n\n.content > * {\n    margin-right: 1em;\n    margin-left: 1em;\n}\n\n.feature {\n    padding-left: 1em;\n    padding-right: 1em;\n}\n.feature h2 {\n    padding-top: 1em;\n    padding-bottom: 0.5em;\n}\n.feature p {\n    padding-top: 0.5em;\n    padding-bottom: 1em;\n}\n\n#features_list > * {\n    width: 100%;\n    text-align: center;\n}\n\n.feature {\n    padding-left: 0;\n    padding-right: 0;\n}\n\n.feature .content {\n    margin-top: 1.5em;\n    margin-bottom: 1.5em;\n    margin-left: auto;\n    margin-right: auto;\n    color: #222;\n}\n\n.feature_box {\n    max-width: 30em;\n}\n\n.feature_box h2 {\n    text-align: left;\n    padding: 0;\n    padding-bottom: 0.25em;\n}\n.feature_box p {\n    text-align: left;\n    margin-top: 0.25em;\n    margin-bottom: 0;\n    padding: 0;\n}\n\n/*Title color: 50% / 65%*/\n.feature .feature_icon {\n    background-color: rgba(256, 256, 256, 0.6);\n}\n.feature .divider {\n    height: 1.25em;\n}\n.feature:nth-child(1) .divider {\n    background: url(\"data:image/svg+xml;utf8,\\\n        <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='150px' height='50px' viewBox='0 0 150 50' enable-background='new 0 0 150 50' xml:space='preserve' preserveAspectRatio='none'>\\\n        <g><path fill='%23BBACFF' d='M0,0v20C12,12,20,4,36,4c28,0,40,40,68,40c20.235,0,31.229-12.979,46-23.833V0H0z'/></g>\\\n        </svg>\") repeat-x center center;\n    background-position: 5em;\n    background-size: 50em 100%;\n}\n.feature:nth-child(1) {\n    background-color: #E5F0BC;\n}\n.feature:nth-child(1) h2 {\n    color: #829842;\n}\n.feature:nth-child(2) .divider {\n    background: url(\"data:image/svg+xml;utf8,\\\n        <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='150px' height='50px' viewBox='0 0 150 50' enable-background='new 0 0 150 50' xml:space='preserve' preserveAspectRatio='none'>\\\n        <g><path fill='%23E5F0BC' d='M0,0v20C12,12,20,4,36,4c28,0,40,40,68,40c20.235,0,31.229-12.979,46-23.833V0H0z'/></g>\\\n        </svg>\") repeat-x center center;\n    background-position: 25em;\n    background-size: 50em 100%;\n}\n.feature:nth-child(2) {\n    background-color: #ECC6BA;\n}\n.feature:nth-child(2) h2 {\n    color: #945242;\n}\n.feature:nth-child(3) .divider {\n    background: url(\"data:image/svg+xml;utf8,\\\n        <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='150px' height='50px' viewBox='0 0 150 50' enable-background='new 0 0 150 50' xml:space='preserve' preserveAspectRatio='none'>\\\n        <g><path fill='%23ECC6BA' d='M0,0v20C12,12,20,4,36,4c28,0,40,40,68,40c20.235,0,31.229-12.979,46-23.833V0H0z'/></g>\\\n        </svg>\") repeat-x center center;\n    background-position: 45em;\n    background-size: 50em 100%;\n}\n.feature:nth-child(3) {\n    background-color: #BFEEE7;\n}\n.feature:nth-child(3) h2 {\n    color: #449787;\n}\n.feature:nth-child(4) .divider {\n    background: url(\"data:image/svg+xml;utf8,\\\n        <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='150px' height='50px' viewBox='0 0 150 50' enable-background='new 0 0 150 50' xml:space='preserve' preserveAspectRatio='none'>\\\n        <g><path fill='%23BFEEE7' d='M0,0v20C12,12,20,4,36,4c28,0,40,40,68,40c20.235,0,31.229-12.979,46-23.833V0H0z'/></g>\\\n        </svg>\") repeat-x center center;\n    background-position: 65em;\n    background-size: 50em 100%;\n}\n.feature:nth-child(4) {\n    background-color: #C4C9E7;\n}\n.feature:nth-child(4) h2 {\n    color: #414A95;\n}\n.feature:nth-child(5) .divider {\n    background: url(\"data:image/svg+xml;utf8,\\\n        <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='150px' height='50px' viewBox='0 0 150 50' enable-background='new 0 0 150 50' xml:space='preserve' preserveAspectRatio='none'>\\\n        <g><path fill='%23C4C9E7' d='M0,0v20C12,12,20,4,36,4c28,0,40,40,68,40c20.235,0,31.229-12.979,46-23.833V0H0z'/></g>\\\n        </svg>\") repeat-x center center;\n    background-position: 85em;\n    background-size: 50em 100%;\n}\n.feature:nth-child(5) {\n    background-color: #DBD2BD;\n}\n.feature:nth-child(5) h2 {\n    color: #947B42;\n}\n.feature:nth-child(6) .divider {\n    background: url(\"data:image/svg+xml;utf8,\\\n        <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='150px' height='50px' viewBox='0 0 150 50' enable-background='new 0 0 150 50' xml:space='preserve' preserveAspectRatio='none'>\\\n        <g><path fill='%23DBD2BD' d='M0,0v20C12,12,20,4,36,4c28,0,40,40,68,40c20.235,0,31.229-12.979,46-23.833V0H0z'/></g>\\\n        </svg>\") repeat-x center center;\n    background-position: 105em;\n    background-size: 50em 100%;\n}\n.feature:nth-child(6) {\n    background-color: #D8EDD7;\n}\n.feature:nth-child(6) h2 {\n    color: #5EB256;\n}\n.feature:nth-child(7) .divider {\n    background: url(\"data:image/svg+xml;utf8,\\\n        <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='150px' height='50px' viewBox='0 0 150 50' enable-background='new 0 0 150 50' xml:space='preserve' preserveAspectRatio='none'>\\\n        <g><path fill='%23D8EDD7' d='M0,0v20C12,12,20,4,36,4c28,0,40,40,68,40c20.235,0,31.229-12.979,46-23.833V0H0z'/></g>\\\n        </svg>\") repeat-x center center;\n    background-position: 125em;\n    background-size: 50em 100%;\n}\n.feature:nth-child(7) {\n    background-color: #EBBAD0;\n}\n.feature:nth-child(7) h2 {\n    color: #933D65;\n}\n.feature:nth-child(7) .feature_icon {\n    background-color: rgba(256, 256, 256, 0.7);\n}\n\n.feature:last-child {\n    padding-bottom: 3em;\n}\n\n/*/////////////\n// QUESTIONS //\n/////////////*/\n\n#faq {\n    padding-left: 2em;\n    padding-right: 2em;\n    margin-left: auto;\n    margin-right: auto;\n    max-width: 70em;\n}\n\n#faq h1 {\n    margin-bottom: 0.5em;\n}\n\n/*/////////\n// LINKS //\n/////////*/\n\n#links {\n}\n\n#links > div {\n    padding: 0.5em;\n    margin-left: auto;\n    margin-right: auto;\n    max-width: 70em;\n}\n\n#links > div :first-child {\n    margin-top: 0;\n}\n#links > div :last-child {\n    margin-bottom: 0;\n}\n\n#links a {\n    white-space: nowrap;\n}\n\n/*//////////\n// FOOTER //\n//////////*/\n\nfooter {\n    text-align: center;\n    font-size: 85%;\n    color: gray;\n    padding: 0em;\n}\n\n/*/////////\n// OTHER //\n/////////*/\n\n.non_active {\n   pointer-events: none;\n   cursor: default;\n}\n.icon_content {\n    position: relative;\n}\n.icon {\n    overflow: hidden;\n}\n",
+			"file": "style.css",
+			"file_size": 13992,
+			"file_write_time": 1455124811000000,
+			"settings":
+			{
+				"buffer_size": 13993,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Generate a palette:\n\nffmpeg -y -ss 0 -t 30 -i app_preview.mp4 -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png\n\nOutput the GIF using the palette:\n\nffmpeg -ss 2 -t 9 -i app_preview.mp4 -i palette.png -filter_complex \"fps=30,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse\" output3.gif",
+			"settings":
+			{
+				"buffer_size": 296,
+				"line_ending": "Unix",
+				"name": "Generate a palette:"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "curve1.svg",
+			"settings":
+			{
+				"buffer_size": 617,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "curve2.svg",
+			"settings":
+			{
+				"buffer_size": 617,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "curve3.svg",
+			"settings":
+			{
+				"buffer_size": 617,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "curve4.svg",
+			"settings":
+			{
+				"buffer_size": 617,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "curve5.svg",
+			"settings":
+			{
+				"buffer_size": 617,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "curve6.svg",
+			"settings":
+			{
+				"buffer_size": 617,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -40,6 +127,16 @@
 	},
 	"file_history":
 	[
+		"/Users/archagon/Documents/Programming/Web/Composer's Sketchpad Homepage/curve3.svg",
+		"/Users/archagon/Documents/Programming/Web/Composer's Sketchpad Homepage/curve2.svg",
+		"/Users/archagon/Documents/Programming/Web/Composer's Sketchpad Homepage/curve1.svg",
+		"/Users/archagon/Documents/Programming/Web/Composer's Sketchpad Homepage/Curve-4.svg",
+		"/Users/archagon/Documents/Programming/Web/Composer's Sketchpad Homepage/Curve-3.svg",
+		"/Users/archagon/Documents/Programming/Web/Composer's Sketchpad Homepage/Curve-2.svg",
+		"/Users/archagon/Documents/Programming/Web/Composer's Sketchpad Homepage/Curve-1.svg",
+		"/Users/archagon/Documents/Programming/Web/Composer's Sketchpad Homepage/curve4.svg",
+		"/Users/archagon/Documents/Programming/Web/Composer's Sketchpad Homepage/Curve.svg",
+		"/Users/archagon/Documents/Programming/Web/Composer's Sketchpad Homepage/download_badge.svg",
 		"/Users/archagon/Desktop/grapher tests/playback_line.txt",
 		"/Users/archagon/Desktop/grapher tests/updated_points.txt",
 		"/Users/archagon/Desktop/grapher tests/basic_line.txt",
@@ -99,6 +196,60 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"border",
+			"margin-bottom",
+			"lightblue",
+			"#demo {",
+			"play, rep",
+			"font-size",
+			": 2em",
+			"font-size:",
+			"font-famil",
+			"font",
+			"8rem",
+			"8em",
+			"border-radius:",
+			"max-width",
+			"feature_icon",
+			"avenir",
+			"footer",
+			"#title",
+			": white",
+			"green",
+			"#links",
+			"#features",
+			"#demo",
+			"border-radius",
+			"script",
+			"font-weight",
+			"=\"icons\"",
+			"=\"icons",
+			"badge",
+			"feature_icon",
+			"feature_box",
+			"backgroundifier",
+			"screenshot",
+			"\"app\"",
+			"lightblue",
+			" img",
+			"аны ну",
+			"max-width: 70em;",
+			"#faq",
+			"max-width:",
+			"-1",
+			"feature_box",
+			"border-radius",
+			"content",
+			"green",
+			"greenColo",
+			": red",
+			"green",
+			"aspect",
+			"app",
+			".badge",
+			"#features",
+			"margin:",
+			"margin-top",
 			"note into",
 			"{23.569458, 33.5}",
 			"{0, 0}",
@@ -181,7 +332,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -189,7 +340,232 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 2598,
+						"buffer_size": 11789,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3898,
+								3898
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 265.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "style.css",
+					"settings":
+					{
+						"buffer_size": 13993,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13993,
+								13993
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8931.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"settings":
+					{
+						"buffer_size": 296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								296,
+								159
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_name": "Generate a palette:",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"settings":
+					{
+						"buffer_size": 0,
 						"regions":
 						{
 						},
@@ -250,9 +626,451 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "curve1.svg",
+					"settings":
+					{
+						"buffer_size": 617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								616,
+								233
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "curve2.svg",
+					"settings":
+					{
+						"buffer_size": 617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								604,
+								604
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "curve3.svg",
+					"settings":
+					{
+						"buffer_size": 617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								604,
+								604
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "curve4.svg",
+					"settings":
+					{
+						"buffer_size": 617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								604,
+								604
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "curve5.svg",
+					"settings":
+					{
+						"buffer_size": 617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								604,
+								604
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "curve6.svg",
+					"settings":
+					{
+						"buffer_size": 617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -304,6 +1122,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"",
+				"download_badge.svg"
+			]
 		],
 		"width": 0.0
 	},
@@ -319,6 +1141,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 233.0,
 	"status_bar_visible": true
 }
