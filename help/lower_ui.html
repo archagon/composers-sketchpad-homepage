@@ -1,0 +1,177 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Composer's Sketchpad Manual</title>
+    <meta name="description" content="Composer's Sketchpad Manual">
+    <meta name="author" content="Archagon">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+
+    <!-- external css -->
+    <link rel="stylesheet" href="../external/lightbox/css/lightbox.min.css">
+
+    <!-- internal css -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../new-style.css">
+
+    <!-- analytics -->
+    <!-- <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-44612590-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+
+    <!-- webfonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet"> -->
+</head>
+
+<body id="manual_page">
+    <header id="header">
+        <a href="../index.html"><img src="../images/icons/sketchpad_square.png"></img></a>
+        <ul class="horizontal_links_list">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="http://beta-blog.archagon.net/2016/02/05/composers-sketchpad/">Blog</a></li>
+            <li><a href="../help/canvas.html">Manual</a></li>
+            <li><a href="../help.html">Help</a></li>
+        </ul>
+    </header>
+
+	<article id="help" class="emphasized_section">
+        <header>
+        	<h1 class="title">Manual</h1>
+        	<ul class="horizontal_links_list">
+        		<li><a href="canvas.html"><span>The Canvas</span></a></li>
+        		<li><a href="lower_ui.html" class="selected"><span>Lower UI</span></a></li>
+        		<li><a href="upper_ui.html"><span>Upper UI (Widgets)</span></a></li>
+        		<li><a href="upper_ui_tools.html"><span>Upper UI (Tools)</span></a></li>
+        	</ul>
+        </header>
+
+		<section id="manual_lower_ui">
+            <h1>Lower UI</h1>
+
+			<p>All the essential controls for drawing, editing, and playback are located on the bottom of the screen.</p>
+
+			<p>These are the Undo and Redo buttons.</p>
+
+			<div class="border">
+				<img srcset="undo_redo_crop.png 2x"></img>
+			</div>
+
+			<p>This is the Play button.</p>
+
+			<div class="border">
+				<img srcset="play_crop.png 2x"></img>
+			</div>
+
+			<p>Playback begins from the red line going down the center of the screen.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="play_poster.png">
+				<source src="play.mp4" type="video/mp4">
+				</video>
+				<h1>Playback</h1>
+			</div>
+
+			<p>This is the Rewind button.</p>
+
+			<div class="border">
+				<img srcset="rewind_crop.png 2x"></img>
+			</div>
+
+			<p>Whenever you hit the Play button, you automatically create a new rewind point. After this happens, you'll go back to the last playback position whenever you rewind.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="rewind_poster.png">
+				<source src="rewind.mp4" type="video/mp4">
+				</video>
+				<h1>Rewinding</h1>
+			</div>
+
+			<p>This is the Record button.</p>
+
+			<div class="border">
+				<img srcset="record_crop.png 2x"></img>
+			</div>
+
+			<p>If you tap this button, your composition will start to play and you'll be able to draw notes from the play line without having to hold down the canvas. Hit the Record button again to stop.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="record_poster.png">
+				<source src="record.mp4" type="video/mp4">
+				</video>
+				<h1>Recording</h1>
+			</div>
+
+			<p>This is the Erase button.</p>
+
+			<div class="border">
+				<img srcset="erase_crop.png 2x"></img>
+			</div>
+
+			<p>Erase works just like drawing. Once you tap the Erase button, you'll be in Erase mode. To go back to Draw mode, tap the Erase button again.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="erase_poster.png">
+				<source src="erase.mp4" type="video/mp4">
+				</video>
+				<h1>Erasing</h1>
+			</div>
+
+			<p>One small hidden feature: if you hold down the Play button, a radial menu will appear that lets you modify your playback speed!</p>
+
+			<div class="border">
+				<video width="259" height="185" controls loop poster="play_menu_poster.png">
+				<source src="play_menu.mp4" type="video/mp4">
+				</video>
+			</div>
+		</section>
+	</article>
+
+
+    <footer id="footer">
+        <ul class="horizontal_links_list">
+            <li><a href="http://beta-blog.archagon.net/2016/02/05/composers-sketchpad/">Blog</a></li>
+            <li><a href="https://twitter.com/composerssketch">Twitter</a></li>
+            <li><a href="http://facebook.com/composerssketchpad">Facebook</a></li>
+            <!-- <li>Press Kit</li> -->
+        </ul>
+        <div>
+            <p>Copyright © Alexei Baboulevitch ("Archagon") 2016.
+        </div>
+    </footer>
+
+    <script>
+        // iPad w/iOS9 seems to not display play button without this code
+        if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!= null)) {
+            $('#preview_video').prop("controls",true);
+        }
+    </script>
+
+    <script src="external/lightbox/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'fadeDuration': 200,
+            'resizeDuration': 200,
+            'alwaysShowNavOnTouchDevices': true,
+            'wrapAround': true
+        })
+    </script>
+</body>
+
+</html>

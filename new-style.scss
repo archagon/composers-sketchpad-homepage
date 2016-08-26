@@ -1,0 +1,1677 @@
+// null = omit
+@mixin flexbox($direction, $align, $justify) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    @if $justify {
+        $alt-justify: $justify;
+
+        @if $justify == space-between {
+            $alt-justify: justify;
+        }
+
+        -webkit-box-pack: $alt-justify;
+        -ms-flex-pack: $alt-justify;
+        justify-content: $justify;
+    }
+
+    @if $align {
+        $alt-align: $align;
+
+        @if $align == flex-start {
+            $alt-align: start;
+        }
+
+        -webkit-box-align: $alt-align;
+        -ms-flex-align: $alt-align;
+        -ms-grid-row-align: $align;
+        align-items: $align;
+    }
+
+    @if $direction {
+        $alt-direction-1: $direction;
+        $alt-direction-2: $direction;
+
+        @if $align == row {
+            $alt-direction-1: horizontal;
+            $alt-direction-2: normal;
+        }
+        @else if $align == column {
+            $alt-direction-1: vertical;
+            $alt-direction-2: normal;
+        }
+
+        -webkit-box-orient: $alt-direction-1;
+        -webkit-box-direction: $alt-direction-2;
+        -ms-flex-direction: $direction;
+        flex-direction: $direction;
+    }
+}
+
+@mixin no-flex-shrink {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+@mixin hyphens($hyphens) {
+    -webkit-hyphens: $hyphens;
+    -moz-hyphens: $hyphens;
+    -ms-hyphens: $hyphens;
+    hyphens: $hyphens;
+}
+
+@mixin child-margins($margin, $vertical: false) {
+    @if ($vertical) {
+        > * {
+            margin-top: $margin;
+            margin-bottom: $margin;
+        }
+        & :first-child {
+            margin-top: 0;
+        }
+        & :last-child {
+            margin-bottom: 0;
+        }
+    }
+    @else {
+        > * {
+            margin-left: $margin;
+            margin-right: $margin;
+        }
+        & :first-child {
+            margin-left: 0;
+        }
+        & :last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+$shrunk-size: 750px;
+$compact-size: 450px;
+
+@mixin shrunk {
+    @if true {
+        @media all and (max-width: $shrunk-size) { 
+            @content;
+        }
+    }
+}
+@mixin nonshrunk {
+    @if true {
+        @media not all and (max-width: $shrunk-size) { 
+            @content;
+        }
+    }
+}
+@mixin compact {
+    @if true {
+        @media all and (max-width: $compact-size) { 
+            @content;
+        }
+    }
+}
+@mixin noncompact {
+    @if true {
+        @media not all and (max-width: $compact-size) { 
+            @content;
+        }
+    }
+}
+
+$shrink-factor: 0.7;
+// $shrink-factor-percent: 70%;
+
+// colors
+$titular-blue: #3873B9;
+$declarative-blue: #4480c6;
+$sandy-yellow: lighten(yellow, 40%);
+
+// fonts
+$header-font: Futura, 'Trebuchet MS', Arial, sans-serif;
+$body-font: 'Avenir Next', 'Helvetica', 'Arial', sans-serif;
+$mono-font: 'Fira Mono', monospace;
+
+// multipurpose top-level layout
+$header-gap: 2rem;
+// $title-gap: 0.5rem;
+$title-gap: 1rem;
+$to-footer-gap: 2rem;
+
+// home top-level layout
+// $blurb-gap: 2rem;
+// $icon-gap: 2rem;
+$blurb-gap: 3rem;
+$icon-gap: 3rem;
+$demo-gap: 1.6rem;
+$media-gap: 2rem;
+$features-gap: 2rem;
+$awards-gap: 2rem;
+
+// other
+$side-padding: 2rem;
+
+////////////
+/* GLOBAL */
+////////////
+
+@font-face {
+    font-family: 'Fira Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Fira Mono'), local('FiraMono'), url("fira.woff") format('woff');
+}
+
+/* box sizing */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* annoying mobile auto-resizing */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* shrink fonts past estimated mobile threshhold */
+
+html {
+    // body {
+    //     font-size: 12px;
+    // }
+
+    // @include shrunk {
+    //     font-size: 75%;
+    // }
+
+    @include shrunk {
+        font-size: percentage($shrink-factor);
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+///////////////
+/* TOP LEVEL */
+///////////////
+
+body {
+    font-family: $body-font;
+
+    p {
+        // TODO: wrong! p size should be 1em as the baseline
+        font-size: 1.2em;
+        line-height: 1.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        font-weight: 500;
+
+        margin-bottom: 0.3em;
+    }
+
+    background-color: #C6EAFF;
+
+    color: #444;
+}
+
+/////////////////////
+/* GENERAL CLASSES */
+/////////////////////
+
+.nobreak {
+    white-space: nowrap;
+}
+
+/* youtube link span */
+.youtube {
+    /* icon */
+    &:before {
+        /* gives us some space w/o breaking apart lines */
+        content: "\00a0\00a0\00a0\00a0\00a0";
+
+        background: url(images/youtube.png);
+        background-size: 1.21em 0.85em;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        margin-right: 0.1em;
+    }
+
+    /* underlines only text, not icon */
+    text-decoration: none;
+    > * {
+        text-decoration: underline;
+    }
+
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* shadowy, round-cornery floating section */
+.emphasized_section {
+    border-radius: 2em;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.horizontal_links_list {
+    @include flexbox(row, baseline, null);
+    @include child-margins(0.5em);
+}
+
+.non_active {
+   pointer-events: none;
+   cursor: default;
+}
+
+.icon_content {
+    position: relative;
+}
+
+.icon {
+    overflow: hidden;
+}
+
+////////////
+/* HEADER */
+////////////
+
+$link-padding: 0.2rem;
+$link-gap: 1.2rem;
+$link-margin: ($link-gap - $link-padding * 2) / 2;
+$link-padding-compact: $link-padding;
+$link-gap-compact: 0.8rem;
+$link-margin-compact: ($link-gap-compact - $link-padding-compact * 2) / 2;
+
+/* layout */
+// NEXT:
+#header {
+    /* top-level layout */
+    margin-bottom: $header-gap;
+
+    height: 3rem;
+
+    @include flexbox(null, center, space-between);
+
+    padding-right: #{ $link-gap };
+    // @include media {
+    //     padding-right: #{ $link-gap-compact };
+    // }
+
+    // lhs icon
+    > a {
+        height: 100%;
+
+        > img {
+            height: 100%;
+        }
+
+        @include no-flex-shrink;
+    }
+
+    // rhs links
+    > ul {
+        // li+li { 
+        //     border-left: 1px solid lightgray;
+        //     padding-left: 0.25em; //TODO: how does this mesh with other padding???
+        // }
+
+        @include child-margins($link-margin);
+        // @include media {
+        //     @include child-margins($link-margin-compact);
+        // }
+
+        /* highlighted spacing */
+        a {
+            padding: $link-padding 0.5em $link-padding 0.5em;
+            // @include media {
+            //     padding: $link-padding-compact 0.5em $link-padding-compact 0.5em;
+            // }
+        }
+    }
+}
+
+/* appearance */
+#header {
+    background-color: white;
+
+    .title {
+        font-size: 3rem;
+    }
+
+    /* inserts a bullet between the links */
+    > ul {
+        > li {
+            /* ensures that bullets have something to be anchored to */
+            position: relative;
+        }
+        > li+li:before {
+            content: "";
+
+            $height: 0.5rem;
+
+            display: inline-block;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+
+            width: $height;
+            height: $height;
+            left: -$link-margin - ($height / 2);
+            top: calc(50% - #{ $height / 2 });
+
+            background-color: #DDD;
+            border-radius: #{ $height / 2 };
+        }
+    }
+
+    > ul > * {
+        font-size: 1.2em;
+        @include shrunk {
+            font-size: 1.1em;
+        }
+
+        font-family: $header-font;
+        text-transform: uppercase;
+
+        a {
+            /* don't underline links */
+            text-decoration: none;
+
+            border-radius: 0.4em;
+
+            &:hover {
+                background-color: $titular-blue;
+                color: white;
+            }
+        }
+    }
+}
+
+///////////
+/* TITLE */
+///////////
+
+/* layout */
+#title {
+    /*top-level layout*/
+    margin-bottom: $title-gap;
+
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+
+    width: 100%;
+
+    > div {
+        max-width: 50em;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* appearance */
+#title {
+    text-align: center;
+
+    color: $titular-blue;
+
+    font-weight: bold;
+
+    h1 {
+        @include nonshrunk {
+            font-size: 4em;
+        }
+        @include shrunk {
+            font-size: 3.4em;
+        }
+        @include compact {
+            font-size: 3em;
+        }
+
+        font-weight: bold;
+        margin: 0;
+    }
+}
+
+///////////
+/* BLURB */
+///////////
+
+/* layout */
+#blurb {
+    /* top-level layout */
+    margin-bottom: $blurb-gap;
+    @include shrunk {
+        margin-bottom: $blurb-gap * 0.75;
+    }
+
+    /* the blurb needs room to breathe */
+    padding-left: $side-padding / 2;
+    padding-right: $side-padding / 2;
+
+    > div {
+        max-width: 48em;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* appearance */
+#blurb {
+    text-align: center;
+
+    > div {
+        > p {
+            $darken: 5%;
+            $saturate: 0%;
+
+            /* generated using http://www.husl-colors.org */
+            /* starting point: s 100 l 74.1 */
+            & :nth-child(1) {
+                color: saturate(darken(#ff9aa0, $darken), $saturate);
+            }
+            & :nth-child(2) {
+                color: saturate(darken(#00d08b, $darken), $saturate);
+            }
+            & :nth-child(3) {
+                color: saturate(darken(#d3b500, $darken), $saturate);
+            }
+            & :nth-child(4) {
+                color: saturate(darken(#ec96ff, $darken), $saturate);
+            }
+            & :nth-child(5) {
+                color: $declarative-blue;
+            }
+
+            font-family: $mono-font;
+            font-weight: 700;
+            line-height: 1.2em;
+
+            @include nonshrunk {
+                font-size: 1.42em;
+            }
+            @include shrunk {
+                font-size: 1.2em;
+            }
+            @include compact {
+                font-size: 0.9em;
+                /* gross but oh well */
+                letter-spacing: -1px;
+            }
+
+            -webkit-font-variant-ligatures: none;
+            font-variant-ligatures: none;
+
+            // font-family: 'Roboto Mono', monospace;
+            // font-family: 'Droid Sans Mono', monospace;
+            // font-family: 'Oxygen Mono', monospace;
+        }
+    }
+}
+
+// #blurb {
+//     > div {
+//         background-color: black;
+//         p {
+//             margin-bottom: 0 !important;
+//             padding-top: 1rem;
+//             padding-bottom: 1rem;
+//         }
+//         border-radius: 2rem;
+//     }
+// }
+
+///////////
+/* ICONS */
+///////////
+
+/* layout */
+#icons {
+    /* top-level layout */
+    margin-bottom: $icon-gap;
+    @include shrunk {
+        margin-bottom: $icon-gap * 0.75;
+    }
+
+    #icons_list {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        @include flexbox(row, center, center);
+
+        .icon {
+            @include flexbox(column, center, null);
+
+            padding: 0.75em;
+
+            /* prevents whitespace below images */
+            img {
+                display: block;
+            }
+
+            @include child-margins(0.325em, true);
+        }
+
+        .icon_content {
+            @include flexbox(column, center, nil);
+        }
+
+        .badge, .icon_image {
+            width: 10em;
+        }
+
+        @include child-margins(1em);
+    }
+}
+
+/* appearance */
+#icons {
+    @include shrunk {
+        font-size: 0.75em;
+    }
+
+    .icon {
+        background-color: #A0D0F7;
+    }
+
+    /* slightly more defined shadow & different corners than the default here */
+    .emphasized_section {
+        border-radius: 1em;
+        box-shadow: 0 2px 6px rgba(0,0,0, 0.35);
+    }
+}
+
+//////////
+/* DEMO */
+//////////
+
+/* layout */
+#demo {
+    /* top-level layout */
+    margin-bottom: $demo-gap;
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+    @include compact {
+        padding-left: $side-padding * 0.25;
+        padding-right: $side-padding * 0.25;
+    }
+
+    .demo_container {
+        position: relative;
+
+        width: 100%;
+        max-width: 55em;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        video {
+            position: absolute;
+
+            width: 81.5%;
+            height: 86.0%;
+
+            top: -0.08em;
+            bottom: 0;
+            left: 0.05em;
+            right: 0;
+
+            margin: auto;
+        }
+    }
+}
+
+/* appearance */
+#demo {
+    .demo_container {
+        video {
+            background: url(images/placeholder.png) no-repeat center center;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+///////////
+/* MEDIA */
+///////////
+
+/* layout */
+#media {
+    /*top-level layout*/
+    margin-bottom: $media-gap;
+    @include compact {
+        /* to account for svg pattern */
+        margin-bottom: $media-gap * 1.25;
+    }
+
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+
+    > div {
+        max-width: 44rem;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* appearance */
+#media {
+    font-size: 1.0em;
+    @include shrunk {
+        font-size: 0.8em;
+    }
+
+    font-weight: 700;
+    line-height: 1.2em;
+
+    text-align: center;
+
+    color: white;
+
+    > div {
+        background-color: lighten($declarative-blue, 5%);
+        padding: 1em;
+    }
+
+    a {
+        color: lighten($declarative-blue, 30%);
+    }
+
+    .emphasized_section {
+        border-radius: 1.5rem;
+    }
+}
+
+//////////////
+/* FEATURES */
+//////////////
+
+/* layout */
+#features {
+    /* top-level layout */
+    margin-bottom: $features-gap;
+
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+    @include compact {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #features_list {
+        max-width: 64em;
+        margin: auto;
+
+        @include flexbox(column, center, center);
+
+        > * {
+            /* each feature spans the full width of the features box */
+            width: 100%;
+        }
+    }
+
+    .content {
+        // we don't use child-margins here because the position of the image 
+        // and the description can be flipped
+        /* spacing between image and description */
+        @include noncompact {
+            > * {
+                margin-left: 1.4em;
+                margin-right: 1.4em;
+            }
+        }
+        @include compact {
+            > * {
+                margin-top: 1.0em;
+                margin-bottom: 1.0em;
+            }
+        }
+
+        @include noncompact {
+            padding-top: 3em;
+            padding-bottom: 3em;
+        }
+        @include compact {
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+
+        @include noncompact {
+            @include flexbox(row, center, center);
+        }
+        @include compact {
+            @include flexbox(column, center, center);
+        }
+    }
+
+    .feature_box {
+        max-width: 25em;
+        @include compact {
+            max-width: 38em;
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+    }
+
+    .feature_icon {
+        width: 23em;
+        @include compact {
+            width: 34em;
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        position: relative;
+        // bottom: 1em;
+
+        @include no-flex-shrink;
+    }
+}
+
+/* appearance */
+#features {
+    .emphasized_section {
+        @include compact {
+            /* start and end decorations in compact mode */
+            overflow: visible;
+            border-radius: 0;
+        }
+    }
+
+    .content {
+        @include noncompact {
+            text-align: left;
+        } 
+        @include compact {
+            text-align: center;
+        }
+    }
+
+    .feature_box {
+        > .header {
+            > .title h2 {
+                @include compact {
+                    text-align: center;
+                }
+
+                @include nonshrunk {
+                    font-size: 1.8em;
+                }
+                @include shrunk {
+                    font-size: 1.6em;
+                }
+                font-family: $header-font;
+                line-height: 1em;
+            }
+        }
+    }
+
+    /* screenshots */
+    .feature_icon {
+        -webkit-filter: drop-shadow(0 5px 10px rgba(0,0,0,0.25));
+        filter: drop-shadow(0 5px 10px rgba(0,0,0,0.25));
+
+        border-radius: 0.3em;
+    }
+}
+
+/* last feature section */
+.feature_box.list_feature {
+    max-width: 100% !important;
+
+    /* layout */
+    .description {
+        /* center vertically */
+        @include flexbox(null, center, null);
+
+        width: 23rem;
+
+        padding: 0.4em;
+        margin: 0 0.4em 1.2em 0.4em;
+
+        > .icons {
+            @include no-flex-shrink;
+
+            margin-right: 1em;
+
+            > img {
+                width: 3.5em;
+            }
+        }
+
+        h2 {
+            margin-bottom: 0.1em;
+        }
+    }
+    > .header > .title {
+        margin-bottom: 2em;
+    }
+    > .descriptions_list {
+        @include flexbox(null, flex-start, center);
+
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    /* appearance */
+    .description {
+        $icon-color: $titular-blue;
+
+        text-align: left;
+
+        > .icons {
+            line-height: 0;
+
+            -webkit-filter: drop-shadow(1px 2px 4px rgba($icon-color, 0.5));
+            filter: drop-shadow(1px 2px 4px rgba($icon-color, 0.5));
+
+            img {
+                overflow: hidden;
+                border-radius: 0.5em !important;
+                background-color: $icon-color;
+
+                // -webkit-filter: brightness(0.25);
+                // filter: brightness(0.25);
+            }
+        }
+
+        // color: darken($icon-color, 0%) !important;
+        h2 {
+            // color: darken($icon-color, 0%) !important;
+            font-size: 1.3em;
+            font-weight: 500;
+            // color: darken($icon-color, 15%) !important;
+        }
+    }
+    > .header > .title {
+        h2 {
+            color: black !important;
+            text-align: center;
+            font-size: 2.4em !important;
+        }
+    }
+}
+
+/* auto-generated using SASS */
+/* color map: http://tristen.ca/hcl-picker/#/clh/8/116/E8FABB/3BA73E */
+#features_list > {
+    $divider-width: 20rem;
+    $divider-height: 1.7rem;
+
+    // sets divider background pattern
+    @mixin divider-theme($top-color, $bottom-color, $shade, $svg, $shadow-opacity) {
+        $darker-bottom-color: if($shade, darken(desaturate($bottom-color, 5%), 3%), $bottom-color);
+        $darker-bottom-color: if($shade, black, $bottom-color);
+
+        $sliver-opacity: $shadow-opacity;
+        $blur-radius: 10;
+
+        @if ($svg == 1) {
+        // modified by replacing quotes, changing the viewbox, adding preserveAspectRatio, substituting the sliver calculations, and substituting the colors
+        background: url("data:image/svg+xml;utf8,\
+<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='512px' height='128px' viewBox='0 0 512 128' enable-background='new 0 0 512 128' xml:space='preserve' \
+preserveAspectRatio='none'>\
+<defs><filter id='f1' x='0' y='0'><feGaussianBlur in='SourceGraphic' stdDeviation='#{ $blur-radius }' /></filter></defs>\
+<rect fill='%23#{ str-slice(ie-hex-str($bottom-color), 4) }' opacity='#{ alpha($bottom-color) }' width='512' height='128'/>\
+<path fill='%23#{ str-slice(ie-hex-str($darker-bottom-color), 4) }' opacity='#{ $sliver-opacity }' filter='url(%23f1)' d='M256,104c-66.667,0-100.287-25.215-132.8-49.6C91.385,30.539,61.333,8,0,8h-64V-8h640V8h-64c-61.333,0-91.385,22.539-123.2,46.4C356.287,78.785,322.667,104,256,104z'/>\
+<path fill='%23#{ str-slice(ie-hex-str($top-color), 4) }' opacity='#{ alpha($top-color) }' d='M512,0H0c128,0,128,96,256,96S384,0,512,0z'/>\
+</svg>\
+") repeat-x center center;
+        }
+        @else if ($svg == 2) {
+        background: url("data:image/svg+xml;utf8,\
+<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='512px' height='128px' viewBox='0 0 512 128' enable-background='new 0 0 512 128' xml:space='preserve' \
+preserveAspectRatio='none'>\
+<defs><filter id='f1' x='0' y='0'><feGaussianBlur in='SourceGraphic' stdDeviation='#{ $blur-radius }' /></filter></defs>\
+<rect fill='%23#{ str-slice(ie-hex-str($bottom-color), 4) }' opacity='#{ alpha($bottom-color) }' width='512' height='128'/>\
+<polygon fill='%23#{ str-slice(ie-hex-str($darker-bottom-color), 4) }' opacity='#{ $sliver-opacity }' filter='url(%23f1)' points='-2.809,7.491 -64,8 -64,-8 576,-8 576,8 514.809,7.491 256,104.544    '/>\
+<polygon fill='%23#{ str-slice(ie-hex-str($top-color), 4) }' opacity='#{ alpha($top-color) }' points='0,0 256,96 512,0    '/>\
+</svg>\
+") repeat-x center center;
+        }
+        @else {
+        background: url("data:image/svg+xml;utf8,\
+<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='512px' height='128px' viewBox='0 0 512 128' enable-background='new 0 0 512 128' xml:space='preserve' \
+preserveAspectRatio='none'>\
+<defs><filter id='f1' x='0' y='0'><feGaussianBlur in='SourceGraphic' stdDeviation='#{ $blur-radius }' /></filter></defs>\
+<rect fill='%23#{ str-slice(ie-hex-str($bottom-color), 4) }' opacity='#{ alpha($bottom-color) }' width='512' height='128'/>\
+<polygon fill='%23#{ str-slice(ie-hex-str($darker-bottom-color), 4) }' opacity='#{ $sliver-opacity }' filter='url(%23f1)' points='120,104 120,8 -64,8 -64,-24 576,-24 576,8 392,8 392,104     '/>\
+<polygon fill='%23#{ str-slice(ie-hex-str($top-color), 4) }' opacity='#{ alpha($top-color) }' points='384,96 384,0 127.834,0 128,96   '/>\
+</svg>\
+") repeat-x center center;
+        }
+
+        /* bug: needs to be pixel increment to avoid gaps */
+        $base-svg-width: 57px;
+        @include nonshrunk {
+            background-size: $base-svg-width 100%;
+        }
+        @include shrunk {
+            background-size: ceil($base-svg-width * $shrink-factor) 100%;
+        }
+    }
+
+    // allows divider to not be part of document flow (text overlap)
+    .feature {
+        position: relative;
+    }
+
+    // sets up divider pseudoelement
+    @mixin divider-setup {
+        content: "";
+
+        position: absolute;
+        display: block;
+
+        width: $divider-width;
+        height: $divider-height;
+        min-width: 100%;
+
+        // for centering
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    *:before {
+        @include divider-setup;
+    }
+
+    // creates divider pseudoelement
+    @mixin divider($child, $before, $top-color, $bottom-color, $shade, $svg, $shadow-opacity: 0.2) {
+        $divider-kludge: 0;
+
+        @if $before {
+            :nth-child(#{ $child }):before {
+                // setup moved out of this mixin for CSS space savings
+                @include divider-theme($top-color, $bottom-color, $shade, $svg, $shadow-opacity);
+                top: -$divider-height / 2;
+
+                z-index: 1;
+            }
+        }
+        @else {
+            :nth-child(#{ $child }):after {
+                @include divider-setup;
+                @include divider-theme($top-color, $bottom-color, $shade, $svg, $shadow-opacity);
+                bottom: -$divider-height / 2;
+            }
+        }
+    }
+
+    .feature {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    // colors the text
+    @mixin section-theme($child, $color, $previous-color, $text-color, $reverse: false) {
+        :nth-child(#{ $child }) {
+            background-color: $color;
+        }
+        :nth-child(#{ $child }) h2 {
+            color: $text-color;
+        }
+        :nth-child(#{ $child }) h3 {
+            color: $text-color;
+        }
+
+        @if $reverse {
+            :nth-child(#{ $child }) .content {
+                @include noncompact {
+                    -webkit-box-orient: row-reverse;
+                    -webkit-box-direction: row-reverse;
+                    -ms-flex-direction: row-reverse;
+                    flex-direction: row-reverse;
+
+                    // there's probably a better place to put this but w/e
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    $title-darken-percent: 40%;
+
+    // $previous-color: rgba(0,0,0,0);
+    $previous-color: #C6EAFF;
+    $current-color: #A3D2F8;
+
+    @include compact {
+        @include divider(1, true, $previous-color, $current-color, true, 1);
+    }
+    @include section-theme(1, $current-color, $previous-color, darken($current-color, $title-darken-percent), false);
+
+    $previous-color: $current-color;
+    $current-color: #F5C664;
+
+    @include divider(2, true, $previous-color, $current-color, true, 1);
+    @include section-theme(2, $current-color, $previous-color, darken($current-color, $title-darken-percent), true);
+
+    $previous-color: $current-color;
+    $current-color: #88DF9D;
+
+    @include divider(3, true, $previous-color, $current-color, true, 2);
+    @include section-theme(3, $current-color, $previous-color, darken($current-color, $title-darken-percent), false);
+
+    $previous-color: $current-color;
+    $current-color: #F0BCED;
+
+    @include divider(4, true, $previous-color, $current-color, true, 3);
+    @include section-theme(4, $current-color, $previous-color, darken($current-color, $title-darken-percent), true);
+
+    $previous-color: $current-color;
+    $current-color: #C2CAF9;
+
+    // we use a manual darken percent here because of the particular shade of blue
+    @include divider(5, true, $previous-color, $current-color, true, 1);
+    @include section-theme(5, $current-color, $previous-color, darken($current-color, 30%), false);
+
+    $previous-color: $current-color;
+    $current-color: $sandy-yellow;
+
+    @include divider(6, true, $previous-color, $current-color, true, 2, 0.35);
+    @include section-theme(6, $current-color, $previous-color, black, false);
+
+    $previous-color: $current-color;
+    $current-color: #C6EAFF;
+
+    @include compact {
+        @include divider(6, false, $previous-color, $current-color, true, 1);
+    }
+}
+
+/* ensures that content is not hidden by svg dividers */
+#features_list {
+    .content {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+////////////
+/* AWARDS */
+////////////
+
+/* layout */
+#awards {
+    /* top-level layout */
+    margin-bottom: $awards-gap;
+
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+
+    width: 100%;
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    > div {
+        margin-left: auto;
+        margin-right: auto;
+
+        max-width: 42em;
+    }
+
+    .award {
+        @include flexbox(row, center, center);
+
+        margin-left: auto;
+        margin-right: auto;
+
+        > img {
+            width: 6em;
+            min-width: 6em;
+        }
+
+        > p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        @include child-margins(0.5em);
+    }
+}
+
+/* appearance */
+#awards {
+    // background-color: #FAFBD2;
+
+    > div {
+        // border-radius: 2rem;
+        // background-color: $sandy-yellow;
+    }
+
+    .award {
+        > p {
+            @include hyphens(auto);
+
+            font-size: 1.2em;
+            @include compact {
+                font-size: 1.0em;
+            }
+
+            line-height: 1.2em;
+
+            font-weight: 500;
+        }
+    }
+}
+
+///////////
+/* ABOUT */
+///////////
+
+/* layout */
+#about {
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+
+    div {
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+
+        max-width: 35em;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        /* center vertically */
+        @include flexbox(null, center, null);
+
+        > img {
+            @include no-flex-shrink;
+
+            width: 7em;
+        }
+
+        > div {
+            padding: 0;
+            padding-left: 1.2em;
+        }
+    }
+}
+
+/* appearance */
+#about {
+    > div {
+        font-size: 0.95em;
+        @include compact {
+            font-size: 0.7em;
+        }
+
+        line-height: 1.1em;
+
+        background-color: white;
+
+        border-radius: 2rem;
+
+        > img {
+            border-radius: 1rem;
+        }
+
+        @include hyphens(auto);
+
+        span {
+           @include hyphens(none);
+        }
+
+        a {
+            @include hyphens(none);
+        }
+
+        .name {
+            font-weight: 600;
+            color: blue;
+        }
+
+        .username {
+            font-weight: 600;
+            color: red;
+        }
+    }
+}
+
+////////////
+/* FOOTER */
+////////////
+
+/* layout */
+#footer {
+    margin-top: $to-footer-gap;
+
+    position: relative;
+
+    @include flexbox(row, center, space-between);
+    @include compact {
+        /* separate links and copyright in compact mode */
+        @include flexbox(column, null, null);
+    }
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+
+    ul {
+        li+li { 
+            padding-left: 1em; //TODO: how does this mesh with other padding???
+        }
+
+        @include compact {
+            /* separate links and copyright in compact mode */
+            padding-bottom: 0.7em;
+        }
+    }
+}
+
+/* appearance */
+#footer {
+    font-size: 1em;
+
+    background-color: white;
+    color: gray;
+
+    ul {
+        li+li { 
+            border-left: 1px solid #000000;
+        }
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+//////////
+/* HELP */
+//////////
+
+#help_page {
+    /* layout */
+    #title {
+        /* top-level layout */
+        margin-bottom: 2rem;
+    }
+
+    /* layout */
+    #faq {
+        /* top-level layout */
+        // margin-bottom: 4rem;
+
+        padding-left: $side-padding;
+        padding-right: $side-padding;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        max-width: 56rem;
+
+        h1 {
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-top: 0.25em;
+        }
+
+        ul {
+            > li {
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+
+    /* appearance */
+    #faq {
+        ul {
+            list-style-type: none;
+        }
+    }
+
+    /* layout */
+    #links {
+        padding: 1em 0 2.5em 0;
+
+        padding-left: $side-padding;
+        padding-right: $side-padding;
+        @include compact {
+            padding-left: $side-padding / 2;
+            padding-right: $side-padding / 2;
+        }
+
+        > div {
+            margin-left: auto;
+            margin-right: auto;
+
+            padding: 1.5em;
+            @include compact {
+                padding: 1em;
+            }
+
+            max-width: 60rem;
+        }
+    }
+
+    /* appearance */
+    #links {
+        font-size: 0.9em;
+        @include shrunk {
+            font-size: 0.8em;
+        }
+
+        font-weight: 700;
+
+        text-align: center;
+
+        > div {
+            background-color: $sandy-yellow;
+        }
+
+        a {
+            white-space: nowrap;
+        }
+    }
+
+    #footer {
+        /* top-level layout */
+        margin-top: 0rem;
+    }
+}
+
+////////////
+/* MANUAL */
+////////////
+
+#manual_page {
+    /* layout */
+    #help {
+        @include noncompact {
+            width: 60rem;
+            /* not using padding here b/c article does not contain inner div like usual */
+            max-width: calc(100% - #{ $side-padding * 2 });
+        }
+        @include compact {
+            /* full width in compact mode */
+            width: 100%;
+        }
+
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-bottom: 2rem;
+
+        > header {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 1.4rem;
+            padding-right: 1.4rem;
+
+            @include flexbox(row, baseline, space-between);
+            @include compact {
+                /* separate links and header in compact mode */
+                @include flexbox(column, center, null);
+            }
+
+            .horizontal_links_list {
+                @include compact {
+                    /* vertical links layout in compact mode */
+                    @include flexbox(column, center, center);
+                    @include child-margins(0);
+                }
+            }
+
+            > h1 {
+                @include compact {
+                    /* more spacing for vertical header */
+                    padding-bottom: 0.4em;
+                }
+            }
+
+            > ul {
+                @include noncompact {
+                    $header-margin: 0.6em;
+
+                    /* horizontal links layout only in regular mode */
+                    @include child-margins($header-margin / 2);
+                    li+li { 
+                        padding-left: $header-margin;
+                    }
+                }
+                @include compact {
+                    > li {
+                        margin-bottom: 0.2em;
+                    }
+                    & :last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        section {
+            padding-top: 2em;
+            padding-bottom: 3em;
+            padding-left: 4em;
+            padding-right: 4em;
+            @include compact {
+                /* different spacing for full-width layout */
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+
+            @include shrunk {
+                font-size: 0.9em;
+            }
+
+            $paragraph-spacing: 1em;
+            $video-spacing: 2em;
+
+            p {
+                margin-bottom: $paragraph-spacing;
+            }
+
+            h1 {
+                margin-bottom: 1.0em;
+            }
+
+            img {
+                display: block;
+                width: 100% !important;
+            }
+
+            video {
+                display: block;
+
+                /* make sure we shrink-to-fit */
+                max-width: 100% !important;
+                height: auto !important;
+            }
+
+            .border {
+                margin-top: #{ $video-spacing - $paragraph-spacing };
+                margin-bottom: $video-spacing;
+
+                display: inline-block;
+
+                max-width: 100%;
+
+                padding: 3px;
+            }
+
+            .caption {
+                padding-bottom: 0;
+
+                h1 {
+                    margin-top: 0.7em;
+                    margin-bottom: 0.7em;
+                }
+            }
+
+            /* no paragraph spacing between last item and bottom of page */
+            & :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    /* image size kludge: I don't want to have to do this, but it's necessary in order to
+    a) support firefox correctly, and b) to shrink images on smaller screens */
+    #help {
+        $compact-scaling-factor: 0.7;
+        @mixin image-width($n, $width) {
+            > .border:nth-of-type(#{ $n }) {
+                @include nonshrunk {
+                    width: 80px;
+                }
+                @include shrunk {
+                    width: #{ 80px * $compact-scaling-factor };
+                }
+            }
+        }
+
+        #manual_canvas {
+        }
+        #manual_lower_ui {
+            @include image-width(1, 133.5px); /* undo/redo */
+            @include image-width(2, 94px); /* play */
+            @include image-width(4, 71.5px); /* rewind */
+            @include image-width(6, 71.5px); /* record */
+            @include image-width(8, 81.5px); /* erase */
+        }
+        #manual_upper_ui {
+            @include image-width(1, 80px); /* home */
+        }
+        #manual_upper_ui_tools {
+            @include image-width(1, 80px); /* toolbar */
+            @include image-width(2, 70px); /* snap time */
+            @include image-width(4, 70px); /* snap pitch */
+            @include image-width(6, 80px); /* snap play line */
+            @include image-width(8, 80px); /* shift notes */
+        }
+    }
+
+    /* appearance */
+    #help {
+        background-color: white;
+
+        font-size: 1.0em;
+        line-height: 1.25em;
+
+        > header {
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-color: lightgray;
+
+            > h1 {
+                font-size: 1.8em;
+                @include shrunk {
+                    font-size: 1.6em;
+                }
+
+                line-height: 1em;
+                font-family: $header-font;
+            }
+
+            > ul {
+                font-size: 1.1em;
+                @include shrunk {
+                    font-size: 0.9em;
+                }
+                @include compact {
+                    font-size: 1.1em;
+                }
+
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        > span {
+                            border-bottom-style: solid;
+                            border-bottom-width: 1.5px;
+                            @include shrunk {
+                                border-bottom-width: 1px;
+                            }
+                            border-bottom-color: gray;
+                        }
+                    }
+                }
+
+                .selected {
+                    > span {
+                        border-bottom-style: dotted;
+                        border-bottom-width: 1.5px;
+                        @include shrunk {
+                            border-bottom-width: 1px;
+                        }
+                        border-bottom-color: gray;
+                    }
+                }
+
+                @include noncompact {
+                    /* horizontal layout only in regular mode */
+                    li+li { 
+                        border-left: 1px solid lightgray;
+                    }
+                }
+            }
+        }
+
+        section {
+            p {
+                text-align: left;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                font-weight: 500;
+            }
+
+            .border {
+                box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            }
+
+            .caption {
+                // font-family: $header-font;
+                font-weight: 700;
+                font-size: 0.7em;
+
+                color: lighten(gray, 10%);
+
+                text-align: center;
+            }
+        }
+    }
+
+    @include compact {
+        /* full width in compact mode */
+        > .emphasized_section {
+            border-radius: 0;
+        }
+    }
+}

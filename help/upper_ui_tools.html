@@ -1,0 +1,201 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Composer's Sketchpad Manual</title>
+    <meta name="description" content="Composer's Sketchpad Manual">
+    <meta name="author" content="Archagon">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+
+    <!-- external css -->
+    <link rel="stylesheet" href="../external/lightbox/css/lightbox.min.css">
+
+    <!-- internal css -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../new-style.css">
+
+    <!-- analytics -->
+    <!-- <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-44612590-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+
+    <!-- webfonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet"> -->
+</head>
+
+<body id="manual_page">
+    <header id="header">
+        <a href="../index.html"><img src="../images/icons/sketchpad_square.png"></img></a>
+        <ul class="horizontal_links_list">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="http://beta-blog.archagon.net/2016/02/05/composers-sketchpad/">Blog</a></li>
+            <li><a href="../help/canvas.html">Manual</a></li>
+            <li><a href="../help.html">Help</a></li>
+        </ul>
+    </header>
+
+	<article id="help" class="emphasized_section">
+        <header>
+        	<h1 class="title">Manual</h1>
+        	<ul class="horizontal_links_list">
+        		<li><a href="canvas.html"><span>The Canvas</span></a></li>
+        		<li><a href="lower_ui.html"><span>Lower UI</span></a></li>
+        		<li><a href="upper_ui.html"><span>Upper UI (Widgets)</span></a></li>
+        		<li><a href="upper_ui_tools.html" class="selected"><span>Upper UI (Tools)</span></a></li>
+        	</ul>
+        </header>
+
+		<section id="manual_upper_ui_tools">
+            <h1>Upper UI (Tools)</h1>
+
+			<p>This is the Tools panel. Inside are a number of tools that can help with your editing.</p>
+
+				<div class="border">
+				<img srcset="tools.png 2x"></img>
+			</div>
+			
+			<p>This is the Snap to Time tool.</p>
+
+				<div class="border">
+				<img srcset="snap_to_time.png 2x"></img>
+			</div>
+			
+			<p>If you tap this button, you'll automatically snap every note you draw to the nearest meter mark. Tap it again to disable this mode.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="snap_to_time_poster.png">
+				<source src="snap_to_time.mp4" type="video/mp4">
+				</video>
+				<h1>Snap to Time Mode</h1>
+			</div>
+			
+			<p>This is the Snap to Pitch tool.</p>
+
+			<div class="border">
+				<img srcset="snap_to_pitch.png 2x"></img>
+			</div>
+			
+			 <p>If you tap this button, every note you draw will stick to the closest pitch gridline. Tap it again to disable this mode.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="snap_to_pitch_poster.png">
+				<source src="snap_to_pitch.mp4" type="video/mp4">
+				</video>
+				<h1>Snap to Pitch Mode</h1>
+			</div>
+			
+			<p>This is the Draw from Play Line mode.</p>
+
+			<div class="border">
+				<img srcset="draw_from_play.png 2x"></img>
+			</div>
+			
+			 <p>If you tap this button, every note you draw will attach to the red play line in the middle of the screen. This allows you to make very fine adjustments with your note placement. Tap it again to disable this mode.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="draw_from_play_poster.png">
+				<source src="draw_from_play.mp4" type="video/mp4">
+				</video>
+				<h1>Draw from Play Line Mode</h1>
+			</div>
+		        
+		    <p>This is the Shift Notes tool.</p>
+		    
+		    <div class="border">
+				<img srcset="shift.png 2x"></img>
+			</div>
+		    
+		    <p>Tapping this button will put you into Shift Notes Mode. This mode allows you to easily make adjustments to the position of your notes in time. To leave Shift Notes Mode, tap the tab in the upper-right corner.</p>
+
+		    <div class="border">
+				<video width="209" height="463" controls loop poster="shift_mode_change.png">
+				<source src="shift_mode_change.mp4" type="video/mp4">
+				</video>
+			</div>
+		    
+		    <p>To shift your notes, draw with your finger as if you were making a new note. The currently selected notes will shift based on the position of your finger. Notes can even be shifted when zoomed out.</p>
+		    
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="shift_general.png">
+				<source src="shift_general.mp4" type="video/mp4">
+				</video>
+				<h1>Shift Notes Mode</h1>
+			</div>
+
+		    <p>The notes that will be shifted are selected based on the settings underneath the mode tab. The first setting, Layer Selection, determines whether just the current layer or all the layers are selected during a shift operation.</p>
+
+		    <div class="border caption">
+				<video width="600" height="450" controls loop poster="shift_layers.png">
+				<source src="shift_layers.mp4" type="video/mp4">
+				</video>
+				<h1>Shift Notes Mode: Single Layer</h1>
+			</div>
+		    
+		    <p>The second setting, Note Selection, determines whether only the notes touching the selection line are selected, or if every note to the right of the selection line is also selected. Keep in mind that you will not be able to shift notes past the bounds of the canvas, so if you happen to have a note on the far-right edge of your composition, you might not be able to shift notes earlier on if All to Right is selected.</p>
+		    
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="shift_touching_line.png">
+				<source src="shift_touching_line.mp4" type="video/mp4">
+				</video>
+				<h1>Shift Notes Mode: Touching Line</h1>
+			</div>
+
+		    <p>The third setting, Snapping, determines whether notes are shifted only by the length of a meter mark, or if instead they can be shifted an arbitrary distance.</p>
+		    
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="shift_snapping.png">
+				<source src="shift_snapping.mp4" type="video/mp4">
+				</video>
+				<h1>Shift Notes Mode: No Snapping</h1>
+			</div>
+	</article>
+
+
+    <footer id="footer">
+        <ul class="horizontal_links_list">
+            <li><a href="http://beta-blog.archagon.net/2016/02/05/composers-sketchpad/">Blog</a></li>
+            <li><a href="https://twitter.com/composerssketch">Twitter</a></li>
+            <li><a href="http://facebook.com/composerssketchpad">Facebook</a></li>
+            <!-- <li>Press Kit</li> -->
+        </ul>
+        <div>
+            <p>Copyright © Alexei Baboulevitch ("Archagon") 2016.
+        </div>
+    </footer>
+
+    <script>
+        // iPad w/iOS9 seems to not display play button without this code
+        if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!= null)) {
+            $('#preview_video').prop("controls",true);
+        }
+    </script>
+
+    <script src="external/lightbox/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'fadeDuration': 200,
+            'resizeDuration': 200,
+            'alwaysShowNavOnTouchDevices': true,
+            'wrapAround': true
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Composer's Sketchpad Manual</title>
+    <meta name="description" content="Composer's Sketchpad Manual">
+    <meta name="author" content="Archagon">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+
+    <!-- external css -->
+    <link rel="stylesheet" href="../external/lightbox/css/lightbox.min.css">
+
+    <!-- internal css -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../new-style.css">
+
+    <!-- analytics -->
+    <!-- <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-44612590-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+
+    <!-- webfonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet"> -->
+</head>
+
+<body id="manual_page">
+    <header id="header">
+        <a href="../index.html"><img src="../images/icons/sketchpad_square.png"></img></a>
+        <ul class="horizontal_links_list">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="http://beta-blog.archagon.net/2016/02/05/composers-sketchpad/">Blog</a></li>
+            <li><a href="../help/canvas.html">Manual</a></li>
+            <li><a href="../help.html">Help</a></li>
+        </ul>
+    </header>
+
+	<article id="help" class="emphasized_section">
+        <header>
+        	<h1 class="title">Manual</h1>
+        	<ul class="horizontal_links_list">
+        		<li><a href="canvas.html"><span>The Canvas</span></a></li>
+        		<li><a href="lower_ui.html"><span>Lower UI</span></a></li>
+        		<li><a href="upper_ui.html" class="selected"><span>Upper UI (Widgets)</span></a></li>
+        		<li><a href="upper_ui_tools.html"><span>Upper UI (Tools)</span></a></li>
+        	</ul>
+        </header>
+
+		<section id="manual_upper_ui">
+            <h1>Upper UI (Widgets)</h1>
+
+			<p>There are a number of important tools at the top of the screen.</p>
+
+			<p>This is the Home button. Tap this to go back to the file picker screen. Your composition will be saved automatically.</p>
+
+			<div class="border">
+				<img srcset="home.png 2x"></img>
+			</div>
+			
+			<p>This is the Tempo widget. Swipe left and right to make coarse adjustments to the tempo. Tap the Metronome button to enable audible ticks at each meter mark during playback.</p>
+
+			<div class="border">
+				<video width="227" height="120" controls loop poster="tempo_poster.png">
+				<source src="tempo.mp4" type="video/mp4">
+				</video>
+			</div>
+			
+			<p>You can also tap the widget to open a more fine-grained picker. Tap the title to save the new tempo and close the picker.</p>
+
+			<div class="border">
+				<video width="331" height="266" controls loop poster="tempo_popover_poster.png">
+				<source src="tempo_popover.mp4" type="video/mp4">
+				</video>
+			</div>
+			
+			<p>This is the Instrument widget. Swipe left and right to cycle between your different layers.</p>
+
+			<div class="border">
+				<video width="392" height="120" controls loop poster="instrument_poster.png">
+				<source src="instrument.mp4" type="video/mp4">
+				</video>
+			</div>
+			
+			<p>If you tap the Instrument widget, you'll open a panel where you can modify the properties of each layer. Layers can be switched by tapping the tabs at the top of the panel.</p>
+
+			<div class="border">
+				<video width="521" height="374" controls loop poster="instrument_popover_poster.png">
+				<source src="instrument_popover.mp4" type="video/mp4">
+				</video>
+			</div>
+			
+			<p>If you tap the button with the current layer's instrument, you can pick a new instrument for that layer. (Note that it's not currently possible to transform an instrument layer into a percussion layer or vice-versa.)</p>
+
+			<div class="border">
+				<video width="521" height="535" controls loop poster="instrument_pick_poster.png">
+				<source src="instrument_pick.mp4" type="video/mp4">
+				</video>
+			</div>
+			
+			<p>You can also add or erase layers in this panel.</p>
+
+			<div class="border">
+				<video width="521" height="374" controls loop poster="instrument_add_delete_poster.png">
+				<source src="instrument_add_delete.mp4" type="video/mp4">
+				</video>
+			</div>
+			
+			<p>This is the Meter widget. Swipe left and right to set the number of bars in each measure. (This affects note snapping &mdash; described below &mdash; and the metronome.)</p>
+
+			<div class="border">
+				<video width="227" height="120" controls loop poster="meter_poster.png">
+				<source src="meter.mp4" type="video/mp4">
+				</video>
+			</div>
+			
+			<p>You can tap the Meter widget to additionally set the emphasized beats in each measure. This only affects the sound of the metronome ticks.</p>
+
+				<div class="border">
+				<video width="331" height="266" controls loop poster="meter_popover_poster.png">
+				<source src="meter_popover.mp4" type="video/mp4">
+				</video>
+			</div>
+	</article>
+
+
+    <footer id="footer">
+        <ul class="horizontal_links_list">
+            <li><a href="http://beta-blog.archagon.net/2016/02/05/composers-sketchpad/">Blog</a></li>
+            <li><a href="https://twitter.com/composerssketch">Twitter</a></li>
+            <li><a href="http://facebook.com/composerssketchpad">Facebook</a></li>
+            <!-- <li>Press Kit</li> -->
+        </ul>
+        <div>
+            <p>Copyright © Alexei Baboulevitch ("Archagon") 2016.
+        </div>
+    </footer>
+
+    <script>
+        // iPad w/iOS9 seems to not display play button without this code
+        if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!= null)) {
+            $('#preview_video').prop("controls",true);
+        }
+    </script>
+
+    <script src="external/lightbox/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'fadeDuration': 200,
+            'resizeDuration': 200,
+            'alwaysShowNavOnTouchDevices': true,
+            'wrapAround': true
+        })
+    </script>
+</body>
+
+</html>

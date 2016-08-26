@@ -1,0 +1,174 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Composer's Sketchpad Manual</title>
+    <meta name="description" content="Composer's Sketchpad Manual">
+    <meta name="author" content="Archagon">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+
+    <!-- external css -->
+    <link rel="stylesheet" href="../external/lightbox/css/lightbox.min.css">
+
+    <!-- internal css -->
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../new-style.css">
+
+    <!-- analytics -->
+    <!-- <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-44612590-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+
+    <!-- webfonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet"> -->
+</head>
+
+<body id="manual_page">
+    <header id="header">
+        <a href="../index.html"><img src="../images/icons/sketchpad_square.png"></img></a>
+        <ul class="horizontal_links_list">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="http://beta-blog.archagon.net/2016/02/05/composers-sketchpad/">Blog</a></li>
+            <li><a href="../help/canvas.html">Manual</a></li>
+            <li><a href="../help.html">Help</a></li>
+        </ul>
+    </header>
+
+	<article id="help" class="emphasized_section">
+        <header>
+        	<h1 class="title">Manual</h1>
+        	<ul class="horizontal_links_list">
+        		<li><a href="canvas.html" class="selected"><span>The Canvas</span></a></li>
+        		<li><a href="lower_ui.html"><span>Lower UI</span></a></li>
+        		<li><a href="upper_ui.html"><span>Upper UI (Widgets)</span></a></li>
+        		<li><a href="upper_ui_tools.html"><span>Upper UI (Tools)</span></a></li>
+        	</ul>
+        </header>
+
+		<section id="manual_canvas">
+            <h1>Canvas</h1>
+
+			<p>When starting a new composition, you're presented with a blank canvas. This is where you'll be drawing, editing, and playing back your music. The canvas is covered with a grid. Each horizontal gridline represents one of the 12 piano notes, while each vertical gridline represents a measure mark. (These gridlines are only guides, however!)</p>
+
+			<p>To navigate the canvas, pan around with one finger.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="pan_poster.png">
+				<source src="pan.mp4" type="video/mp4">
+				</video>
+				<h1>Panning</h1>
+			</div>
+			
+			<p>When you draw a note on the canvas, you can start it at any point in time, extend it to any distance, and bend it to any pitch. However, for convenience, you can also snap notes to the gridlines. (This is described in the "Upper UI" section.)</p>
+
+			<p>To draw a note on the canvas, hold the canvas down with your left hand, and then start drawing with your right hand to the right of where you're holding it. (Or vice-versa with left-handed mode.) Think of the canvas as a particularly slippery piece of paper that you need to press down before writing on.</p>
+
+			<p>If you're using an Apple Pencil, you can draw notes without having to hold down the canvas.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="draw_poster.png">
+				<source src="draw.mp4" type="video/mp4">
+				</video>
+				<h1>Drawing</h1>
+			</div>
+			
+			<p>To zoom the canvas, hold the canvas down with your right hand, and then swipe your left hand to the left of where you're holding it. (Or vice-versa with left-handed mode.) Zoom out far enough and you'll reach &quot;preview mode&quot;, where most of the user interface goes away to leave you with an unobstructed view of your music.</p>
+
+			<p>(In case you're wondering why the interface is structured like this, I wanted to give equal priority to panning, zooming, and drawing, since all three actions come up very often while composing. In my experience, two-finger pan and especially pinch-to-zoom don't work very reliably in drawing apps.)</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="zoom_poster.png">
+				<source src="zoom.mp4" type="video/mp4">
+				</video>
+				<h1>Zooming</h1>
+			</div>
+			
+			<p>You can rename your composition by scrolling to the top of the screen and tapping the label.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="title_poster.png">
+				<source src="title.mp4" type="video/mp4">
+				</video>
+				<h1>Editing the Title</h1>
+			</div>
+			
+			<p>Your notes are organized into layers. Each layer has its own color, instrument, volume, and vibrato (if applicable). The foreground layer is the editable layer. You can identify notes in the foreground by their relative brightness and outlines.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="layer_change_poster.png">
+				<source src="layer_change.mp4" type="video/mp4">
+				</video>
+				<h1>Active Layers</h1>
+			</div>
+			
+			<p>There are currently two kinds of layers, percussion and instrumental. Notes draw on an instrumental layer behave as described above. Percussion layers are a bit different, however. When placing percussion notes, the pitch (vertical position) at which you place them does not matter. They sound the same regardless. Instead, you can pick different sounds from the slider below the instrument panel for each note.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="percussion_poster.png">
+				<source src="percussion.mp4" type="video/mp4">
+				</video>
+				<h1>Percussion</h1>
+			</div>
+			
+			<p>Note that whenever you create a new composition, you'll start with a random assortment of instruments. However, you can easily add, modify, or delete them in the Instrument widget, which is described in the "Upper UI" section.</p>
+
+			<p>In Settings, you can also enable One-Finger Draw Mode, which allows you to draw notes with a single finger and pan and zoom with two.</p>
+
+			<div class="border caption">
+				<video width="600" height="450" controls loop poster="two_finger.png">
+				<source src="two_finger.mp4" type="video/mp4">
+				</video>
+				<h1>One-Finger Draw Mode</h1>
+			</div>
+		</section>
+	</article>
+
+
+    <footer id="footer">
+        <ul class="horizontal_links_list">
+            <li><a href="http://beta-blog.archagon.net/2016/02/05/composers-sketchpad/">Blog</a></li>
+            <li><a href="https://twitter.com/composerssketch">Twitter</a></li>
+            <li><a href="http://facebook.com/composerssketchpad">Facebook</a></li>
+            <!-- <li>Press Kit</li> -->
+        </ul>
+        <div>
+            <p>Copyright © Alexei Baboulevitch ("Archagon") 2016.
+        </div>
+    </footer>
+
+    <script>
+        // iPad w/iOS9 seems to not display play button without this code
+        if((navigator.userAgent.match(/iPad/i)) && (navigator.userAgent.match(/iPad/i)!= null)) {
+            $('#preview_video').prop("controls",true);
+        }
+    </script>
+
+    <script src="external/lightbox/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'fadeDuration': 200,
+            'resizeDuration': 200,
+            'alwaysShowNavOnTouchDevices': true,
+            'wrapAround': true
+        })
+    </script>
+</body>
+
+</html>
