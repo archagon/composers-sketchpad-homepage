@@ -33,11 +33,11 @@
         $alt-direction-1: $direction;
         $alt-direction-2: $direction;
 
-        @if $align == row {
+        @if $direction == row {
             $alt-direction-1: horizontal;
             $alt-direction-2: normal;
         }
-        @else if $align == column {
+        @else if $direction == column {
             $alt-direction-1: vertical;
             $alt-direction-2: normal;
         }
@@ -517,6 +517,9 @@ $link-margin-compact: ($link-gap-compact - $link-padding-compact * 2) / 2;
                 letter-spacing: -1px;
             }
 
+            /* ios8 compatibility */
+            -webkit-font-variant-ligatures: no-common-ligatures;
+            font-variant-ligatures: no-common-ligatures;
             -webkit-font-variant-ligatures: none;
             font-variant-ligatures: none;
 
@@ -1042,8 +1045,8 @@ preserveAspectRatio='none'>\
         @if $reverse {
             :nth-child(#{ $child }) .content {
                 @include noncompact {
-                    -webkit-box-orient: row-reverse;
-                    -webkit-box-direction: row-reverse;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: reverse;
                     -ms-flex-direction: row-reverse;
                     flex-direction: row-reverse;
 
