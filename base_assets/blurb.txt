@@ -1,0 +1,64 @@
+A modern, mobile-centric take on music sequencing. -
+An intuitive & interactive compositional          .-
+A melodic, painterly canvas for freespirited folk. -
+A platform for microtonal & polyrhythmic meddling. -
+ Amazingly all of the above!
+
+A modern, mobile-centric take on music sequencing. -
+An intuitive & interactive compositional           -
+A melodic, painterly canvas for freespirited folk. -
+A platform for microtonal & polyrhythmic meddling. -
+Amazingly: all of the above!
+
+An intuitive & interactive compositiona jou-rnalin?
+An intuitive & interactive compositional wo-rkbook?
+A melodic, painterly canvas for freespi-rited folk?
+A smoo, painterly canvas for creative e-xploration?
+A melodic, painterly canvas for creativ-e fiddling?
+A 
+
+A smooth
+melodic
+A platform for microtonal & polyrhy-thmic meddling?
+A stage for microtonal & polyrhythm-ic experiments?
+A stage for microtonal & rhythmic e-xperimentation?
+A stage for microtonal & rhythmi-c experimentation?
+A stage for microtonal & polyrhy-thmic experiments?
+Astonishingly: all of the above!
+
+asdfasd
+
+An intuitive & interactive diary for comp-osition?
+An intuitive & interactive composition sk-etchpad?
+
+
+
+A modern, mobile-centric take on music sequenc-
+ing? An intuitive & interactive diary for comp-
+osition? A melodic, painterly canvas for creat-
+ive fiddling? A stage for microtonal & polyrhy-
+thmic experiments? Amazingly: all of the above!
+
+<p><span>A modern, mobile-centric take on music sequenc-<br>
+ing?</span> <span>An intuitive & interactive diary for comp-<br>
+osition?</span> <span>A melodic, painterly canvas for creat-<br>
+ive fiddling?</span> <span>A stage for microtonal & polyrhy-<br>
+thmic experiments?</span> <span>Amazingly: all of the above!</span></p>
+
+<p><span>A modern, mobile-centric take on music sequenci-<br>
+ng?</span> <span>An intuitive & interactive compositional wo-<br>
+rkbook?</span> <span>A melodic, painterly canvas for creativ-<br>
+e fiddling?</span> <span>A stage for microtonal & rhythmic e-<br>
+xperimentation?</span> <span>Astonishingly: all of the above!</span></p>
+
+compositiona
+
+
+asdfa
+stage
+
+
+([a-zA-Z])(?=[a-zA-Z])
+$1&shy;
+
+melodious
